@@ -1,6 +1,6 @@
 ---
 layout:            post
-title:             "What happens before Linux Boots up!"
+title:             "What happens BEFORE Linux Boots up!"
 date:              2018-11-27 23:18:00 +0300
 tags:              BIOS + File + MagicNumber
 category:          Tutorial

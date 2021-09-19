@@ -2,6 +2,17 @@
 
   
     {
+        "title": "Zombie vs Orphan process",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Zombie-Orphan-process",
+        "tags": ["Zombie","process,Orphan","process"],
+        "date": "2020-09-15 14:40:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "Querying Dremio using Golang and ODBC driver",
         "category": "Tutorial",
         "url": "/blog/tutorial/dremio_odbc_golang",
@@ -57,7 +68,7 @@
 
   
     {
-        "title": "What happens before Linux Boots up!",
+        "title": "What happens BEFORE Linux Boots up!",
         "category": "Tutorial",
         "url": "/blog/tutorial/What-happens-before-Linux-Boots-up!",
         "tags": ["BIOS","+","File","+","MagicNumber"],

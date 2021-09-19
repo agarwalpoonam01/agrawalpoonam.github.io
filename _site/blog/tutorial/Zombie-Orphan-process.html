@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Querying Dremio using Golang and ODBC driver</title>
-    <meta name="description" content="Dremio can be accessed via golang or other programming language. Here we are moving ahead by having two docker containers one of dremio and other of the data...">
+    <title>Zombie vs Orphan process</title>
+    <meta name="description" content="What is process and how it is reaped when dead?In computing, a process is an instance of a computer program that is being executed.A process notifies its par...">
   
     
-    <meta name="keywords" content="Dremio,, Odbc, ,, Golang,, Postgres,, Linux" />
+    <meta name="keywords" content="Zombie, process,Orphan, process" />
     
 
     <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="Querying Dremio using Golang and ODBC driver" />
+	<meta property="og:title" content="Zombie vs Orphan process" />
 	<meta property="og:type" content="article" />
 
 
@@ -28,10 +28,10 @@
 
 
 <meta property="og:site_name" content="Life  is  Short  Do  More" />
-<meta property="og:description" content="Dremio can be accessed via golang or other programming language. Here we are moving ahead by having two docker containers one of dremio and other of the data..." />
+<meta property="og:description" content="What is process and how it is reaped when dead?In computing, a process is an instance of a computer program that is being executed.A process notifies its par..." />
 
 
-<meta property="og:url" content="/blog/tutorial/dremio_odbc_golang" />
+<meta property="og:url" content="/blog/tutorial/Zombie-Orphan-process" />
 
 
     
@@ -40,21 +40,15 @@
 
 
 
-<meta property="article:published_time" content="2020-06-27T22:40:00+05:30" />
+<meta property="article:published_time" content="2020-09-15T14:40:00+05:30" />
 
 
 
-<meta property="article:tag" content="Dremio," />
+<meta property="article:tag" content="Zombie" />
 
-<meta property="article:tag" content="Odbc" />
+<meta property="article:tag" content="process,Orphan" />
 
-<meta property="article:tag" content="," />
-
-<meta property="article:tag" content="Golang," />
-
-<meta property="article:tag" content="Postgres," />
-
-<meta property="article:tag" content="Linux" />
+<meta property="article:tag" content="process" />
 
 <!-- End: Open Graph data -->	
 	<!-- Twitter data -->
@@ -67,15 +61,15 @@
 
 
 
-<meta name="twitter:title" content="Querying Dremio using Golang and ODBC driver">
+<meta name="twitter:title" content="Zombie vs Orphan process">
 
 
 
 
-<meta name="twitter:url" content="/blog/tutorial/dremio_odbc_golang">
+<meta name="twitter:url" content="/blog/tutorial/Zombie-Orphan-process">
 
 
-<meta name="twitter:description" content="Dremio can be accessed via golang or other programming language. Here we are moving ahead by having two docker containers one of dremio and other of the data...">
+<meta name="twitter:description" content="What is process and how it is reaped when dead?In computing, a process is an instance of a computer program that is being executed.A process notifies its par...">
 
 <meta name="twitter:image:src" content="/assets/mountain-cover.jpg">
 <!-- End: Twitter data -->	
@@ -166,171 +160,66 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">Querying Dremio using Golang and ODBC driver</h1>
+            <h1 class="post-title" itemprop="name headline">Zombie vs Orphan process</h1>
             <section class="post-meta">
-                <time datetime="2020-06-27T22:40:00+05:30" itemprop="datePublished">Jun 27, 2020</time>
+                <time datetime="2020-09-15T14:40:00+05:30" itemprop="datePublished">Sep 15, 2020</time>
                 on
                 
-                <span>Dremio,</span>
+                <span>Zombie</span>
                 
-                <span>Odbc</span>
+                <span>process,Orphan</span>
                 
-                <span>,</span>
-                
-                <span>Golang,</span>
-                
-                <span>Postgres,</span>
+                <span>process</span>
                 
             </section>
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <pre><code>Dremio can be accessed via golang or other programming language. Here we are moving ahead by having two docker containers one of dremio and other of the database postgres.
-To access it via code or isql you need to have Dremio odbc Driver and unixODBC driver installed as we are in Linux environment (For windos it is not required).
-
-And that is it. Let follow the steps below.
+            <h3 id="what-is-process-and-how-it-is-reaped-when-dead">What is process and how it is reaped when dead?</h3>
+<pre><code>In computing, a process is an instance of a computer program that is being executed.
+A process notifies its parent process once it has completed its execution and has exited. Then the parent process would remove the process from process table.
 </code></pre>
 
-<h3 id="prerequisites">Prerequisites:</h3>
-<pre><code>Docker installed
+<h3 id="what-is-a-zombie-process">What is a Zombie process?</h3>
+<pre><code>Also known as “defunct” or “dead” process – In simple words, a Zombie process is one that is dead but it is present in the system’s process table. If the parent process is unable to read the process status from its child (the completed process), it won’t be able to remove the process from memory and thus the process being dead still continues to exist in the process table.
+
+The following command can be used to find zombie processes:
+$ ps aux | egrep "Z|defunct"
+
+To remove Zombie process entry from process table, what can be done is to notify its parent process explicitly to remove the  entry. This can be done by sending a SIGCHLD signal to the parent process. 
+
+The following command can be used to find the parent process ID (PID):
+$ ps -o ppid= &lt;child pid&gt;
+
+Once you have the Zombie’s parent process ID, you can use the following command to send a SIGCHLD signal to the parent process:
+
+$ kill -s SIGCHLD &lt;parent pid&gt;
+
+If this does not help t delete entry ofZombie process, you will have to kill. The following command can be used to kill its parent process:
+
+$ kill -9 &lt;parent pid&gt;
 </code></pre>
 
-<h3 id="run-postgres-and-dremio-container">Run postgres and dremio container</h3>
-<pre><code>Postgres:
-docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+<h3 id="what-is-an-orphan-process">What is an Orphan process?</h3>
+<pre><code>An orphan process is a running process whose parent process has finished or terminated.A process can be intentionally orphaned just to keep it running.
 
-Dremio:
-docker run -d -p 9047:9047 -p 31010:31010 -p 45678:45678 dremio/dremio-oss
+Any orphaned process will be immediately adopted by the special init system process. This operation is called re-parenting and occurs automatically.
+
+Even though technically the orphan process has the init process as its parent, it is still called an orphan process since the process that originally created it no longer exists.
+
+Finding a Orphan Process:
+It’s very easy to spot a Orphan process. Orphan process is a user process, which is having init (process id – 1) as parent. You can use this command in linux to find the Orphan processes.
+
+$ ps -elf | head -1; ps -elf | awk '{if ($5 == 1 &amp;&amp; $3 != "root") {print $0}}' | head
+This will show you all the orphan processes running in your system. The output from this command confirms that they are Orphan processes, i.e. the process couldbe intentionally orphaned, so confirm from some other source also before killing them.
+
+Killing a Orphan Process:
+As orphaned processes waste server resources, so it’s not advised to have lots of orphan processes running into the system. To kill a orphan process is same as killing a normal process. gracefuly using -15 (term)
+
+$ kill -15 &lt;pid&gt;
+If that don’t work then simply use
+$ kill -9 &lt;pid&gt;
 </code></pre>
-
-<h3 id="configure-dremio-to-get-the-postgress-data">Configure dremio to get the postgress data</h3>
-<pre><code>* Go to http://127.0.0.1/9047 to access dremio
-* Create account in dremio by providing the details, and do remember username and password.
-* Go to → add source → select postgres → provide the required details
-* To get postgres ip you can go inside the container and do cat /etc/hosts and you can find the ip
-</code></pre>
-
-<div>
-
-<figure>
-<img src="/media/img/dremio-postgres1.png" />
-<figcaption>Login Details</figcaption>
-</figure>
-
-</div>
-
-<pre><code>Once connected follow the steps below.
-</code></pre>
-
-<h4 id="install-dremio-odbc-driver">Install Dremio odbc driver</h4>
-
-<pre><code>$ wget https://download.dremio.com/odbc-driver/1.4.2.1003/dremio-odbc-1.4.2.1003-1.x86_64.rpm
-$ sudo yum localinstall dremio-odbc-1.4.2.1003-1.x86_64.rpm
-</code></pre>
-
-<h4 id="install-go">Install go</h4>
-<pre><code>$ wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
-$ sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
-$ vi ~/.bash_profile
-	export PATH=$PATH:/usr/local/go/bin
-$ source ~/.bash_profile 
-</code></pre>
-
-<h4 id="setting-up-odbcini-and-odbcinstini-file">Setting up odbc.ini and odbcinst.ini file</h4>
-<pre><code>Copy and Paste the below file to your odbc.ini file and odbcinst.ini respectively. You can find the location of ini file by the following command:
-
-$ odbcinst -j
-
-$ sudo vi /etc/odbc.ini
-		[ODBC Data Sources]
-		DREMIO=Dremio ODBC Driver 64-bit
-
-		[DREMIO]
-		Description=Dremio ODBC Driver (64-bit) DSN
-		Driver=/opt/dremio-odbc/lib64/libdrillodbc_sb64.so
-		ConnectionType=Direct
-		HOST=192.168.1.4
-		PORT=31010
-		DATABASE=mydb
-		ZKQuorum=
-		ZKClusterID=
-		AuthenticationType=Plain
-		DelegationUID=
-		AdvancedProperties=CastAnyToVarchar=true;HandshakeTimeout=5;QueryTimeout=180;TimestampTZDisplayTimezone=utc;NumberOfPrefetchBuffers=5;
-		Catalog=DREMIO
-		Schema=
-		SSL=0
-		DisableHostVerification=0
-		DisableCertificateVerification=0
-		TrustedCerts=/opt/dremio-odbc/lib64/cacerts.pem
-		UseSystemTrustStore=0
-		UseExactTLSProtocolVersion=0
-		Min_TLS=
-		TLSProtocol=
-
-$ sudo vi /etc/odbcinst.ini
-		[Dremio ODBC Driver 64-bit]
-		Description=Dremio ODBC Driver(64-bit)
-		Driver=/opt/dremio-odbc/lib64/libdrillodbc_sb64.so
-		UsageCount=1
-</code></pre>
-
-<h4 id="install-unixodbc-driver">Install unixODBC driver</h4>
-
-<pre><code>$ wget ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.7.tar.gz
-$ gunzip unixODBC-2.3.7.tar.gz
-$ tar xvf unixODBC*.tar
-$ cd unixODBC-2.3.7/
-$ ./configure  --prefix=/usr/local/unixODBC
-$ make
-$ sudo make install
-$ export CGO_CFLAGS="-I/usr/local/unixODBC/include"
-$ export CGO_LDFLAGS="-L/usr/local/unixODBC/lib"
-$ go get github.com/alexbrainman/odbc
-$ go run test.go
-		package main
-		import (
-		_ "github.com/alexbrainman/odbc"
-		"database/sql"
-		"log"
-		"fmt"
-		)
-		func main() {
-		    var (
-		        ID   int
-		        NAME string
-			   AGE int
-			   ADDRESS string
-			   SALARY float64
-		    )
-		    db, err := sql.Open("odbc","DSN=Dremio;UID=&lt;dremio login username&gt;;PWD=&lt;dremio password&gt;")
-		    if err != nil {
-		                log.Fatal(err)
-		    }
-		    rows, err := db.Query("SELECT * from test.company")
-		    if err != nil {
-		            log.Fatal(err)
-		    }
-		    if err != nil {
-		        fmt.Println("Unable to Query :( ", err)
-		    }
-		    defer rows.Close()
-		    for rows.Next() {
-		        err := rows.Scan(&amp;ID,&amp;NAME,&amp;AGE,&amp;ADDRESS,&amp;SALARY )
-		        if err != nil {
-		            fmt.Println("Error when parsing :( ", err)
-		        }
-		 
-		        fmt.Println(ID, NAME, AGE, ADDRESS, SALARY)
-		    }
-		    err = rows.Err()
-		    if err != nil {
-		        fmt.Println(err)
-		    }
-			defer db.Close()
-		}
-</code></pre>
-
 
         </section>
 

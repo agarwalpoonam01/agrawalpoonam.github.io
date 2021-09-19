@@ -5,9 +5,72 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sat, 04 Jul 2020 20:27:51 +0530</pubDate>
-    <lastBuildDate>Sat, 04 Jul 2020 20:27:51 +0530</lastBuildDate>
+      <pubDate>Sun, 19 Sep 2021 19:33:31 +0530</pubDate>
+    <lastBuildDate>Sun, 19 Sep 2021 19:33:31 +0530</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Zombie vs Orphan process</title>
+        <description>&lt;h3 id=&quot;what-is-process-and-how-it-is-reaped-when-dead&quot;&gt;What is process and how it is reaped when dead?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;In computing, a process is an instance of a computer program that is being executed.
+A process notifies its parent process once it has completed its execution and has exited. Then the parent process would remove the process from process table.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;what-is-a-zombie-process&quot;&gt;What is a Zombie process?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Also known as “defunct” or “dead” process – In simple words, a Zombie process is one that is dead but it is present in the system’s process table. If the parent process is unable to read the process status from its child (the completed process), it won’t be able to remove the process from memory and thus the process being dead still continues to exist in the process table.
+
+The following command can be used to find zombie processes:
+$ ps aux | egrep &quot;Z|defunct&quot;
+
+To remove Zombie process entry from process table, what can be done is to notify its parent process explicitly to remove the  entry. This can be done by sending a SIGCHLD signal to the parent process. 
+
+The following command can be used to find the parent process ID (PID):
+$ ps -o ppid= &amp;lt;child pid&amp;gt;
+
+Once you have the Zombie’s parent process ID, you can use the following command to send a SIGCHLD signal to the parent process:
+
+$ kill -s SIGCHLD &amp;lt;parent pid&amp;gt;
+
+If this does not help t delete entry ofZombie process, you will have to kill. The following command can be used to kill its parent process:
+
+$ kill -9 &amp;lt;parent pid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;what-is-an-orphan-process&quot;&gt;What is an Orphan process?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;An orphan process is a running process whose parent process has finished or terminated.A process can be intentionally orphaned just to keep it running.
+
+Any orphaned process will be immediately adopted by the special init system process. This operation is called re-parenting and occurs automatically.
+
+Even though technically the orphan process has the init process as its parent, it is still called an orphan process since the process that originally created it no longer exists.
+
+Finding a Orphan Process:
+It’s very easy to spot a Orphan process. Orphan process is a user process, which is having init (process id – 1) as parent. You can use this command in linux to find the Orphan processes.
+
+$ ps -elf | head -1; ps -elf | awk '{if ($5 == 1 &amp;amp;&amp;amp; $3 != &quot;root&quot;) {print $0}}' | head
+This will show you all the orphan processes running in your system. The output from this command confirms that they are Orphan processes, i.e. the process couldbe intentionally orphaned, so confirm from some other source also before killing them.
+
+Killing a Orphan Process:
+As orphaned processes waste server resources, so it’s not advised to have lots of orphan processes running into the system. To kill a orphan process is same as killing a normal process. gracefuly using -15 (term)
+
+$ kill -15 &amp;lt;pid&amp;gt;
+If that don’t work then simply use
+$ kill -9 &amp;lt;pid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Tue, 15 Sep 2020 14:40:00 +0530</pubDate>
+        <link>/blog/tutorial/Zombie-Orphan-process</link>
+        <guid isPermaLink="true">/blog/tutorial/Zombie-Orphan-process</guid>
+        
+        <category>Zombie</category>
+        
+        <category>process,Orphan</category>
+        
+        <category>process</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
     
       <item>
         <title>Querying Dremio using Golang and ODBC driver</title>
@@ -373,7 +436,7 @@ Credentials → System → Global Credentials → Add Credentials
         <title>RSA algorithm (asymmetric algorithm)</title>
         <description>&lt;h3 id=&quot;what-is-rsa-algorithm&quot;&gt;What is RSA algorithm?&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;RSA(Rivest–Shamir–Adleman) is an algorithm to encrypt and decrypt messages. It is an asymmetric cryptographic algorithm. There is a pair of public, private key and algorithm, the message is encrypted with private key of sender and decrypted by the shared public key of the sender.
+&lt;pre&gt;&lt;code&gt;RSA(Rivest–Shamir–Adleman) is an algorithm to encrypt and decrypt messages. It is an asymmetric cryptographic algorithm. There is a pair of public, private key and algorithm, the message is encrypted with the shared public key of receiver and decrypted by the private key of the receiver.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;example&quot;&gt;Example:&lt;/h3&gt;
@@ -609,7 +672,7 @@ KiB Swap:  2097148 total,  2097148 free,        0 used.  3859444 avail Mem&lt;/p
       </item>
     
       <item>
-        <title>What happens before Linux Boots up!</title>
+        <title>What happens BEFORE Linux Boots up!</title>
         <description>&lt;h2 id=&quot;the-warm-up-before-the-boot-process&quot;&gt;The Warm up before the Boot Process&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;On the ground level boot process starts with loading the operating system (where machine doesn't know anything about operating system) from any of the storage device.
 So without wasting time I will get into the deeper level.
@@ -1113,75 +1176,6 @@ To avoid having to use sudo when you use the docker command, create a Unix g
         <category>Docker</category>
         
         <category>+VirtualMachine</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>Simple SMTP Server with Python</title>
-        <description>&lt;p&gt;You really want to design a simple mail server in python then here is the way you can do that.&lt;/p&gt;
-
-&lt;p&gt;This post gives the idea, architecture and implementation of a simple SMTP server in python, where a flask api is used to initialise and start the server, client can use the apis to play around with different type of requests, and send the mail to the server started by api using any of the way to send email(here a small python script client.py to send mail).&lt;/p&gt;
-
-&lt;h2 id=&quot;explaination-of-the-architecture&quot;&gt;Explaination Of the Architecture&lt;/h2&gt;
-
-&lt;h4 id=&quot;we-have-a-flask-app-which-gives-api-to-do-the-following-tasks&quot;&gt;We have a Flask App which gives api to do the following tasks:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Initialise Log location.&lt;/li&gt;
-  &lt;li&gt;Create DB.&lt;/li&gt;
-  &lt;li&gt;Start-Server.&lt;/li&gt;
-  &lt;li&gt;Get emails received by a particular id.&lt;/li&gt;
-  &lt;li&gt;Get emails received after a particular time.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;we-have-smtp-server-implemented-using-python-smtp-library-which-does-the-following&quot;&gt;We have SMTP server implemented using python smtp library which does the following:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Receives email from clients.&lt;/li&gt;
-  &lt;li&gt;Stores emails in database.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;database-store-we-are-using-sqlite-db-store&quot;&gt;DataBase store, we are using sqlite db store:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stores the email received by Smtp server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;client&quot;&gt;Client:&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Uses Flask Apis to perform the requests.&lt;/li&gt;
-  &lt;li&gt;Send email to the server.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;architecture-of-smtp-server&quot;&gt;Architecture Of SMTP server&lt;/h2&gt;
-
-&lt;div&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/media/img/Architecture_smtp.png&quot; /&gt;
-&lt;figcaption&gt;Architecture&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;You can find the code in the github location: &lt;a href=&quot;https://github.com/agrawalpoonam/smtpapp&quot;&gt;
-https://github.com/agrawalpoonam/smtpapp
-&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 01 Nov 2016 17:58:00 +0530</pubDate>
-        <link>/blog/tutorial/SMTP</link>
-        <guid isPermaLink="true">/blog/tutorial/SMTP</guid>
-        
-        <category>Simple</category>
-        
-        <category>SMTP</category>
-        
-        <category>Server+Python</category>
         
         
         <category>Tutorial</category>
