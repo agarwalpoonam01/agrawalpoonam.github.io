@@ -2,7 +2,7 @@
 layout: post
 title: "Fork vs Exec System call"
 date: 	2020-10-12 12:50:00 +0300
-tags: fork system call, exec sytem call
+tags: fork system call, exec system call
 category: Tutorial
 author: Poonam Agarwal
 ---
