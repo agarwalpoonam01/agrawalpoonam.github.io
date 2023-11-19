@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Elasticsearch in a glance"
+title: "Elasticsearch at a glance"
 date: 	2023-11-09 12:50:00 +0300
 tags: Basics 
 category: Tutorial
@@ -12,7 +12,7 @@ author: Poonam Agarwal
 
 ### Why?
 	 We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
-	 Query can retriev data in any form required.
+	 Query can retrieve data in any form required.
 	 Possible to analyze billions of records in few seconds.
 	 Provides aggregations which can explore trends and patterns of data.
 
