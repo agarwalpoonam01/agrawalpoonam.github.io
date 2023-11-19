@@ -156,6 +156,426 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Elasticsearch in a glance</h1>
+            <section class="post-meta">
+                <time datetime="2023-11-09T15:20:00+05:30" itemprop="datePublished">Nov 9, 2023</time> 
+                on
+                
+                <span><a href="">Basics</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="what">What?</h3>
+<pre><code> ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
+</code></pre>
+
+<h3 id="why">Why?</h3>
+<pre><code> We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
+ Query can retriev data in any form required.
+ Possible to analyze billions of records in few seconds.
+ Provides aggregations which can explore trends and patterns of data.
+</code></pre>
+
+<h3 id="how">How?</h3>
+<pre><code> A is document like a row in a relational database, representing a given entity — the thing you’re searching for. 
+ For example, a document can represent an encyclopedia article or log entries from a web server.   
+
+ An index is a collection of documents that have similar characteristics.
+
+ An index in Elasticsearch is actually what’s called an inverted index.
+ Instead of searching the text directly it searches the index.
+ An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. The term “name” occurs in document A and B, so it is mapped to that document.
+</code></pre>
+
+<div>
+
+<figure>
+<img src="/media/img/inverted-index.png" />
+<figcaption>Inverted index</figcaption>
+</figure>
+
+</div>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Error Handling in Golang</h1>
+            <section class="post-meta">
+                <time datetime="2023-03-13T15:20:00+05:30" itemprop="datePublished">Mar 13, 2023</time> 
+                on
+                
+                <span><a href="">Error</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="what-is-error-handling-in-golang">What is error handling in golang</h3>
+
+<pre><code>Software will contain errors and scenarios that are not accounted for. Error handling is an important part of programming robust, reliable, and maintainable code.
+Go offers an interesting approach to errors(a type in the language):
+	Errors may be passed around functions and methods
+Handling errors is part of creating robust, reliable, &amp; trustworthy code
+Calling a method or function that could fail, one of Go’s conventions is to return an error type as its final value
+
+Generally no exception will be thrown within a function if something goes wrong it is up to the caller to decide what to do with the error
+</code></pre>
+
+<h3 id="understanding-the-error-type">UNDERSTANDING THE ERROR TYPE</h3>
+<pre><code>In Go, an error is a value
+The standard library declares the error interface as follows:
+
+	type error interface {
+    	Error() string
+
+This features a single method called Error that returns a string
+</code></pre>
+
+<h3 id="creating-error-object">Creating error object</h3>
+<pre><code>package main
+import (
+	"errors"
+	"fmt"
+)
+func main() {
+	err := errors.New("Something went wrong")
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
+An error is created using the New method from the errors package
+An if statement checks whether the error value was not nil
+If the value is found to not be nil, it is printed
+</code></pre>
+
+<h3 id="dont-panic">DON’T PANIC</h3>
+<pre><code>Panic - built-in function in Go - stops ordinary flow of control, begins panicking, halting the execution of the program
+Bad idea to use this, as execution stops without any alternative
+Below example demonstrates how panic is a hard stop
+	package main
+	import (
+	    "fmt"
+	)
+	func main() {
+	    fmt.Println("This is executed")
+	    panic("Oh no. I can do no more. Goodbye.")
+	    fmt.Println("This is not executed")
+	}
+</code></pre>
+
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Two Factor Authentication</h1>
+            <section class="post-meta">
+                <time datetime="2020-10-12T15:20:00+05:30" itemprop="datePublished">Oct 12, 2020</time> 
+                on
+                
+                <span><a href="">2FA,</a></span>
+                
+                <span><a href="">TOTP,</a></span>
+                
+                <span><a href="">MFA</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="2-factor-authentication">2 Factor Authentication</h3>
+
+<pre><code>2FA adds an extra layer of account protection by requiring two types of authentication. 
+This can be something a user knows, like a password, and something the user has, like a phone(one-time passwords), inherence factors are things that the user is, typically a biometric characteristic such as a fingerprint or an iris pattern.
+</code></pre>
+
+<h3 id="totp">TOTP</h3>
+<pre><code>Time-based One-Time Passwords(TOTP) is a common form of MFA specifically based on 2 Factor Authentication. TOTP Algorithm uses current time(device or server time) and shared key as input.
+</code></pre>
+
+<h3 id="how-totp-works">How TOTP works?</h3>
+<pre><code>The inputs include a shared secret key and the system time.
+Neither the inputs nor the calculation require internet connectivity to generate or verify a token. Diagram below shows this:
+</code></pre>
+
+<div><figure><img src="/media/img/totp-2fa.jpg" /><figcaption></figcaption></figure></div>
+
+<pre><code>You can notice that the secret key and the time both at server end as well as user's end is same. And gives the passcode here for eg."343267" is same at user's as well as server's end.
+</code></pre>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Fork vs Exec System call</h1>
+            <section class="post-meta">
+                <time datetime="2020-10-12T15:20:00+05:30" itemprop="datePublished">Oct 12, 2020</time> 
+                on
+                
+                <span><a href="">fork</a></span>
+                
+                <span><a href="">system</a></span>
+                
+                <span><a href="">call,</a></span>
+                
+                <span><a href="">exec</a></span>
+                
+                <span><a href="">system</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="what-is-fork-system-call">What is Fork System Call?</h3>
+<pre><code>When a new process is created by making an exact copy of itself it is fork. As this is the exact copy the environment remains same as that of parent process with the only difference is pid.
+</code></pre>
+
+<h3 id="what-is-exec-system-call">What is Exec System Call?</h3>
+<pre><code>The exec system call replaces the current process image with the new process image. We can also say that after the fork process, the address space of the child process is overwritten with the new process data.
+</code></pre>
+
+<h3 id="fork-and-exec-system-call-together">Fork and Exec System call together?</h3>
+<pre><code>The fork-and-exec switches the process with each other as in the following example:
+</code></pre>
+
+<div><figure><img src="/media/img/forkandexec.jpg" /><figcaption></figcaption></figure></div>
+
+<pre><code>Have a look on the process they are same in case of fork and different incase of exec. Also the PID is different in case of fork and same incase of exec.
+</code></pre>
+
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">Zombie vs Orphan process</h1>
             <section class="post-meta">
                 <time datetime="2020-09-15T14:40:00+05:30" itemprop="datePublished">Sep 15, 2020</time> 
@@ -2044,7 +2464,7 @@ var config = {
 
         <footer class="site-footer">
     <button class="go-to-top"></button>
-    <p class="copyright"><a href="" title="Life  is  Short  Do  More">Life  is  Short  Do  More</a> &copy; 2021 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="copyright"><a href="" title="Life  is  Short  Do  More">Life  is  Short  Do  More</a> &copy; 2023 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

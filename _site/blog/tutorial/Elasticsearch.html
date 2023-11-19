@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Transactional System Administration Vs Service Centric Model in SRE</title>
-    <meta name="description" content="What is Transactional System Administration?Think of it as a scenario between Customer and SysAdmin:- Customer : Would you do xyz task?- SysAdmin : Yes, Done...">
+    <title>Elasticsearch in a glance</title>
+    <meta name="description" content="What? ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text b...">
   
     
-    <meta name="keywords" content="TransactionalAdministrationSystem, +, ServiceCentricModel" />
+    <meta name="keywords" content="Basics" />
     
 
     <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="Transactional System Administration Vs Service Centric Model in SRE" />
+	<meta property="og:title" content="Elasticsearch in a glance" />
 	<meta property="og:type" content="article" />
 
 
@@ -28,10 +28,10 @@
 
 
 <meta property="og:site_name" content="Life  is  Short  Do  More" />
-<meta property="og:description" content="What is Transactional System Administration?Think of it as a scenario between Customer and SysAdmin:- Customer : Would you do xyz task?- SysAdmin : Yes, Done..." />
+<meta property="og:description" content="What? ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text b..." />
 
 
-<meta property="og:url" content="/blog/tutorial/Transactional-System-Administration-Vs-Service-Centric-Model-in-SRE" />
+<meta property="og:url" content="/blog/tutorial/Elasticsearch" />
 
 
     
@@ -40,15 +40,11 @@
 
 
 
-<meta property="article:published_time" content="2019-03-27T22:40:00+05:30" />
+<meta property="article:published_time" content="2023-11-09T15:20:00+05:30" />
 
 
 
-<meta property="article:tag" content="TransactionalAdministrationSystem" />
-
-<meta property="article:tag" content="+" />
-
-<meta property="article:tag" content="ServiceCentricModel" />
+<meta property="article:tag" content="Basics" />
 
 <!-- End: Open Graph data -->	
 	<!-- Twitter data -->
@@ -61,15 +57,15 @@
 
 
 
-<meta name="twitter:title" content="Transactional System Administration Vs Service Centric Model in SRE">
+<meta name="twitter:title" content="Elasticsearch in a glance">
 
 
 
 
-<meta name="twitter:url" content="/blog/tutorial/Transactional-System-Administration-Vs-Service-Centric-Model-in-SRE">
+<meta name="twitter:url" content="/blog/tutorial/Elasticsearch">
 
 
-<meta name="twitter:description" content="What is Transactional System Administration?Think of it as a scenario between Customer and SysAdmin:- Customer : Would you do xyz task?- SysAdmin : Yes, Done...">
+<meta name="twitter:description" content="What? ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text b...">
 
 <meta name="twitter:image:src" content="/assets/mountain-cover.jpg">
 <!-- End: Twitter data -->	
@@ -160,84 +156,47 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">Transactional System Administration Vs Service Centric Model in SRE</h1>
+            <h1 class="post-title" itemprop="name headline">Elasticsearch in a glance</h1>
             <section class="post-meta">
-                <time datetime="2019-03-27T22:40:00+05:30" itemprop="datePublished">Mar 27, 2019</time>
+                <time datetime="2023-11-09T15:20:00+05:30" itemprop="datePublished">Nov 9, 2023</time>
                 on
                 
-                <span>TransactionalAdministrationSystem</span>
-                
-                <span>+</span>
-                
-                <span>ServiceCentricModel</span>
+                <span>Basics</span>
                 
             </section>
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <h3 id="what-is-transactional-system-administration">What is Transactional System Administration?</h3>
-<pre><code>Think of it as a scenario between Customer and SysAdmin:
-- Customer : Would you do xyz task?
-- SysAdmin : Yes, Done!
-- Customer verifies. 
-This is a typical transaction system. The best example is ticket system.
+            <h3 id="what">What?</h3>
+<pre><code> ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
 </code></pre>
 
-<h3 id="why-is-it-bad">Why is it Bad?</h3>
-<pre><code>- It is a reactive process as the SysAdmin has to do job in a limited time frame which creates pressure over them.
-- It discourages the long term planning, for eg. Nobody comes and says I am working on service and will need this machine configuration in future. As a result there are emergency hacks and outages. Operations is an afterthought.
-- No automation for optimization and prioritization of the requests.
-- Customer considers SRE as "servant" and SRE thinks customer as "ever demanding child". Both of these is bad.
-- There is only one way to scale i.e. hire more people!
-- Users hate to open tickets for every task and hang on it.
-The whole ticket system is creating a pressured environment for SREs , lets call it as "Push" mechanism is working here.
+<h3 id="why">Why?</h3>
+<pre><code> We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
+ Query can retriev data in any form required.
+ Possible to analyze billions of records in few seconds.
+ Provides aggregations which can explore trends and patterns of data.
 </code></pre>
 
-<h3 id="how-did-we-reach-here">How did we reach here?</h3>
-<pre><code>Have we really, ever gave a thought that do we really need Ticket System?  
-Actually No! It's not required.
-But then you need a way to track your work, right!
+<h3 id="how">How?</h3>
+<pre><code> A is document like a row in a relational database, representing a given entity — the thing you’re searching for. 
+ For example, a document can represent an encyclopedia article or log entries from a web server.   
+
+ An index is a collection of documents that have similar characteristics.
+
+ An index in Elasticsearch is actually what’s called an inverted index.
+ Instead of searching the text directly it searches the index.
+ An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. The term “name” occurs in document A and B, so it is mapped to that document.
 </code></pre>
 
-<h3 id="some-of-the-ways-that-different-organizations-has-adopted">Some of the ways that different organizations has adopted.</h3>
-<h4 id="1-baseline--convert-push---collaboration">1) Baseline- Convert “Push” -&gt; “Collaboration”</h4>
-<pre><code>How? There are 2 ways: 
-- Put one SRE member in different development team's Agile meetings.
-- Put each team lead of different development team's in SRE Agile meetings.
-	&gt; Another version could be SRE communicating with all stakeholders of the product not just developers.
-Both of the above points gives a single solution by solving Administartion related problems in Dev teams. Isn't it? 
-SRE memebers become aware of their problems in the meetings and can solve them.
-Dev teams can also use SRE chat rooms for their issues.
-</code></pre>
+<div>
 
-<h4 id="2-baseline--convert-push---automations">2) Baseline- Convert “Push” -&gt; “Automations”</h4>
-<pre><code>Some eg:
-- Automating compilation and build process in CI/CD for developers to do on their own. Click or give some APIs and it's done.
-- Auotmate load balance to point at service replicas.
-- Automate VM creation.
-- Laptop distribution: For new employees we should maintain laptop distribution system as-
-		&gt; SRE tracks HR DB for new employee, Emails when eligible and creates a portal for ordering machines.
-		&gt; Automates OS installation for use by laptop delivery crew.
-		&gt; Does capacity planning generates purchase orders etc for purchasing  and finance group.
-Here we try to automate as much as possible for users to get the task done by automations instead of killing SRE's time. This also keeps motivation of SRE high.
-</code></pre>
+<figure>
+<img src="/media/img/inverted-index.png" />
+<figcaption>Inverted index</figcaption>
+</figure>
 
-<h4 id="3-baseline--convert-push---pull">3) Baseline- Convert “Push” -&gt; “Pull”</h4>
-<pre><code>Use Kanban boards, some good eg are:
-- Trello board
-- Learnkit.com
-</code></pre>
-
-<div><figure><img src="/media/img/kanban-board.png" /><figcaption></figcaption></figure></div>
-
-<pre><code>- Assign 3 task per person in action per week. You pull 3 tasks through system per week.
-This way everyone could prioritize their tasks. It's upto the product management to decide in case of high loads whether prioritize the tasks or hire more people.
-</code></pre>
-
-<p>Some References:
-<a href="https://www.usenix.org/conference/lisa15/conference-program/presentation/limoncelli">
-Reference
-</a></p>
+</div>
 
         </section>
 

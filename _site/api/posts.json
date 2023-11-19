@@ -2,6 +2,50 @@
 
   
     {
+        "title": "Elasticsearch in a glance",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Elasticsearch",
+        "tags": ["Basics"],
+        "date": "2023-11-09 15:20:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "Error Handling in Golang",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/ErrorHandlingInGolang",
+        "tags": ["Error"],
+        "date": "2023-03-13 15:20:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "Two Factor Authentication",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Two-Factor-Authentication",
+        "tags": ["2FA,","TOTP,","MFA"],
+        "date": "2020-10-12 15:20:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "Fork vs Exec System call",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Fork-Vs-Exec-System-call",
+        "tags": ["fork","system","call,","exec","system","call"],
+        "date": "2020-10-12 15:20:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "Zombie vs Orphan process",
         "category": "Tutorial",
         "url": "/blog/tutorial/Zombie-Orphan-process",

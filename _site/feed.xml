@@ -5,9 +5,199 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 19 Sep 2021 19:33:31 +0530</pubDate>
-    <lastBuildDate>Sun, 19 Sep 2021 19:33:31 +0530</lastBuildDate>
-    <generator>Jekyll v3.8.7</generator>
+      <pubDate>Sun, 19 Nov 2023 17:10:42 +0530</pubDate>
+    <lastBuildDate>Sun, 19 Nov 2023 17:10:42 +0530</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Elasticsearch in a glance</title>
+        <description>&lt;h3 id=&quot;what&quot;&gt;What?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt; ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt; We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
+ Query can retriev data in any form required.
+ Possible to analyze billions of records in few seconds.
+ Provides aggregations which can explore trends and patterns of data.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;how&quot;&gt;How?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt; A is document like a row in a relational database, representing a given entity — the thing you’re searching for. 
+ For example, a document can represent an encyclopedia article or log entries from a web server.   
+
+ An index is a collection of documents that have similar characteristics.
+
+ An index in Elasticsearch is actually what’s called an inverted index.
+ Instead of searching the text directly it searches the index.
+ An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. The term “name” occurs in document A and B, so it is mapped to that document.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/media/img/inverted-index.png&quot; /&gt;
+&lt;figcaption&gt;Inverted index&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 09 Nov 2023 15:20:00 +0530</pubDate>
+        <link>/blog/tutorial/Elasticsearch</link>
+        <guid isPermaLink="true">/blog/tutorial/Elasticsearch</guid>
+        
+        <category>Basics</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Error Handling in Golang</title>
+        <description>&lt;h3 id=&quot;what-is-error-handling-in-golang&quot;&gt;What is error handling in golang&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Software will contain errors and scenarios that are not accounted for. Error handling is an important part of programming robust, reliable, and maintainable code.
+Go offers an interesting approach to errors(a type in the language):
+	Errors may be passed around functions and methods
+Handling errors is part of creating robust, reliable, &amp;amp; trustworthy code
+Calling a method or function that could fail, one of Go’s conventions is to return an error type as its final value
+
+Generally no exception will be thrown within a function if something goes wrong it is up to the caller to decide what to do with the error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;understanding-the-error-type&quot;&gt;UNDERSTANDING THE ERROR TYPE&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;In Go, an error is a value
+The standard library declares the error interface as follows:
+
+	type error interface {
+    	Error() string
+
+This features a single method called Error that returns a string
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;creating-error-object&quot;&gt;Creating error object&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;package main
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+)
+func main() {
+	err := errors.New(&quot;Something went wrong&quot;)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
+An error is created using the New method from the errors package
+An if statement checks whether the error value was not nil
+If the value is found to not be nil, it is printed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;dont-panic&quot;&gt;DON’T PANIC&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Panic - built-in function in Go - stops ordinary flow of control, begins panicking, halting the execution of the program
+Bad idea to use this, as execution stops without any alternative
+Below example demonstrates how panic is a hard stop
+	package main
+	import (
+	    &quot;fmt&quot;
+	)
+	func main() {
+	    fmt.Println(&quot;This is executed&quot;)
+	    panic(&quot;Oh no. I can do no more. Goodbye.&quot;)
+	    fmt.Println(&quot;This is not executed&quot;)
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Mon, 13 Mar 2023 15:20:00 +0530</pubDate>
+        <link>/blog/tutorial/ErrorHandlingInGolang</link>
+        <guid isPermaLink="true">/blog/tutorial/ErrorHandlingInGolang</guid>
+        
+        <category>Error</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Two Factor Authentication</title>
+        <description>&lt;h3 id=&quot;2-factor-authentication&quot;&gt;2 Factor Authentication&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;2FA adds an extra layer of account protection by requiring two types of authentication. 
+This can be something a user knows, like a password, and something the user has, like a phone(one-time passwords), inherence factors are things that the user is, typically a biometric characteristic such as a fingerprint or an iris pattern.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;totp&quot;&gt;TOTP&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Time-based One-Time Passwords(TOTP) is a common form of MFA specifically based on 2 Factor Authentication. TOTP Algorithm uses current time(device or server time) and shared key as input.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;how-totp-works&quot;&gt;How TOTP works?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;The inputs include a shared secret key and the system time.
+Neither the inputs nor the calculation require internet connectivity to generate or verify a token. Diagram below shows this:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;&lt;figure&gt;&lt;img src=&quot;/media/img/totp-2fa.jpg&quot; /&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;You can notice that the secret key and the time both at server end as well as user&apos;s end is same. And gives the passcode here for eg.&quot;343267&quot; is same at user&apos;s as well as server&apos;s end.
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Mon, 12 Oct 2020 15:20:00 +0530</pubDate>
+        <link>/blog/tutorial/Two-Factor-Authentication</link>
+        <guid isPermaLink="true">/blog/tutorial/Two-Factor-Authentication</guid>
+        
+        <category>2FA,</category>
+        
+        <category>TOTP,</category>
+        
+        <category>MFA</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Fork vs Exec System call</title>
+        <description>&lt;h3 id=&quot;what-is-fork-system-call&quot;&gt;What is Fork System Call?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;When a new process is created by making an exact copy of itself it is fork. As this is the exact copy the environment remains same as that of parent process with the only difference is pid.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;what-is-exec-system-call&quot;&gt;What is Exec System Call?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;The exec system call replaces the current process image with the new process image. We can also say that after the fork process, the address space of the child process is overwritten with the new process data.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;fork-and-exec-system-call-together&quot;&gt;Fork and Exec System call together?&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;The fork-and-exec switches the process with each other as in the following example:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;&lt;figure&gt;&lt;img src=&quot;/media/img/forkandexec.jpg&quot; /&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;Have a look on the process they are same in case of fork and different incase of exec. Also the PID is different in case of fork and same incase of exec.
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Mon, 12 Oct 2020 15:20:00 +0530</pubDate>
+        <link>/blog/tutorial/Fork-Vs-Exec-System-call</link>
+        <guid isPermaLink="true">/blog/tutorial/Fork-Vs-Exec-System-call</guid>
+        
+        <category>fork</category>
+        
+        <category>system</category>
+        
+        <category>call,</category>
+        
+        <category>exec</category>
+        
+        <category>system</category>
+        
+        <category>call</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
     
       <item>
         <title>Zombie vs Orphan process</title>
@@ -46,7 +236,7 @@ Even though technically the orphan process has the init process as its parent, i
 Finding a Orphan Process:
 It’s very easy to spot a Orphan process. Orphan process is a user process, which is having init (process id – 1) as parent. You can use this command in linux to find the Orphan processes.
 
-$ ps -elf | head -1; ps -elf | awk '{if ($5 == 1 &amp;amp;&amp;amp; $3 != &quot;root&quot;) {print $0}}' | head
+$ ps -elf | head -1; ps -elf | awk &apos;{if ($5 == 1 &amp;amp;&amp;amp; $3 != &quot;root&quot;) {print $0}}&apos; | head
 This will show you all the orphan processes running in your system. The output from this command confirms that they are Orphan processes, i.e. the process couldbe intentionally orphaned, so confirm from some other source also before killing them.
 
 Killing a Orphan Process:
@@ -380,28 +570,28 @@ Credentials → System → Global Credentials → Add Credentials
    agent any
    environment {
        dockerHub = &quot;docker.io&quot;
-       docker_cred = 'dockerhub'
+       docker_cred = &apos;dockerhub&apos;
    }
    stages {
-		stage('SCM Checkout'){
+		stage(&apos;SCM Checkout&apos;){
 			steps{
-				checkout([$class: 'GitSCM',branches: [[name: 'origin/master']],extensions: [[$class: 'WipeWorkspace']],userRemoteConfigs: [[url: 'https://github.com/agrawalpoonam/python-app.git']]  ])
+				checkout([$class: &apos;GitSCM&apos;,branches: [[name: &apos;origin/master&apos;]],extensions: [[$class: &apos;WipeWorkspace&apos;]],userRemoteConfigs: [[url: &apos;https://github.com/agrawalpoonam/python-app.git&apos;]]  ])
 			}
 		}
 		stage(&quot;Build Docker Image&quot;){
 			steps{
-				sh 'pwd'
+				sh &apos;pwd&apos;
 				sh &quot;docker build -t poonamag/test-app . --no-cache&quot;
 			}
 		}
-		stage('Upload Image to DockerHub'){
+		stage(&apos;Upload Image to DockerHub&apos;){
 			steps{ 
 	     	    withCredentials([
-     		 	[$class: 'UsernamePasswordMultiBinding', credentialsId: docker_cred, usernameVariable: 'dockeruser', passwordVariable: 'dockerpass'],
+     		 	[$class: &apos;UsernamePasswordMultiBinding&apos;, credentialsId: docker_cred, usernameVariable: &apos;dockeruser&apos;, passwordVariable: &apos;dockerpass&apos;],
   				]){
 					sh &quot;docker login -u ${dockeruser} -p ${dockerpass} ${dockerHub}&quot;
   				}
-	    	  	sh 'docker push poonamag/test-app'
+	    	  	sh &apos;docker push poonamag/test-app&apos;
 	    	 }
 	  	}
 		stage(&quot;Running Docker Image&quot;){
@@ -442,7 +632,7 @@ Credentials → System → Global Credentials → Add Credentials
 &lt;h3 id=&quot;example&quot;&gt;Example:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;-   EncryptionKey =&amp;gt; (5,14)
-    Suppose a text to be encrypted is letter 'B' -&amp;gt;  2, then  2^5(mod 14)
+    Suppose a text to be encrypted is letter &apos;B&apos; -&amp;gt;  2, then  2^5(mod 14)
     = 32(mod 14) = 4 (cyphertext). Where (e,N) that is 2^e(mod N) =&amp;gt; (5,14)
     is encryption key
 
@@ -516,31 +706,31 @@ The whole ticket system is creating a pressured environment for SREs , lets call
 
 &lt;h3 id=&quot;how-did-we-reach-here&quot;&gt;How did we reach here?&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;Have we really, ever gave a thought that do we really need Ticket System?  
-Actually No! It's not required.
+Actually No! It&apos;s not required.
 But then you need a way to track your work, right!
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;some-of-the-ways-that-different-organizations-has-adopted&quot;&gt;Some of the ways that different organizations has adopted.&lt;/h3&gt;
 &lt;h4 id=&quot;1-baseline--convert-push---collaboration&quot;&gt;1) Baseline- Convert “Push” -&amp;gt; “Collaboration”&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;How? There are 2 ways: 
-- Put one SRE member in different development team's Agile meetings.
-- Put each team lead of different development team's in SRE Agile meetings.
+- Put one SRE member in different development team&apos;s Agile meetings.
+- Put each team lead of different development team&apos;s in SRE Agile meetings.
 	&amp;gt; Another version could be SRE communicating with all stakeholders of the product not just developers.
-Both of the above points gives a single solution by solving Administartion related problems in Dev teams. Isn't it? 
+Both of the above points gives a single solution by solving Administartion related problems in Dev teams. Isn&apos;t it? 
 SRE memebers become aware of their problems in the meetings and can solve them.
 Dev teams can also use SRE chat rooms for their issues.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;2-baseline--convert-push---automations&quot;&gt;2) Baseline- Convert “Push” -&amp;gt; “Automations”&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;Some eg:
-- Automating compilation and build process in CI/CD for developers to do on their own. Click or give some APIs and it's done.
+- Automating compilation and build process in CI/CD for developers to do on their own. Click or give some APIs and it&apos;s done.
 - Auotmate load balance to point at service replicas.
 - Automate VM creation.
 - Laptop distribution: For new employees we should maintain laptop distribution system as-
 		&amp;gt; SRE tracks HR DB for new employee, Emails when eligible and creates a portal for ordering machines.
 		&amp;gt; Automates OS installation for use by laptop delivery crew.
 		&amp;gt; Does capacity planning generates purchase orders etc for purchasing  and finance group.
-Here we try to automate as much as possible for users to get the task done by automations instead of killing SRE's time. This also keeps motivation of SRE high.
+Here we try to automate as much as possible for users to get the task done by automations instead of killing SRE&apos;s time. This also keeps motivation of SRE high.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;3-baseline--convert-push---pull&quot;&gt;3) Baseline- Convert “Push” -&amp;gt; “Pull”&lt;/h4&gt;
@@ -552,7 +742,7 @@ Here we try to automate as much as possible for users to get the task done by au
 &lt;div&gt;&lt;figure&gt;&lt;img src=&quot;/media/img/kanban-board.png&quot; /&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
 
 &lt;pre&gt;&lt;code&gt;- Assign 3 task per person in action per week. You pull 3 tasks through system per week.
-This way everyone could prioritize their tasks. It's upto the product management to decide in case of high loads whether prioritize the tasks or hire more people.
+This way everyone could prioritize their tasks. It&apos;s upto the product management to decide in case of high loads whether prioritize the tasks or hire more people.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Some References:
@@ -665,517 +855,6 @@ KiB Swap:  2097148 total,  2097148 free,        0 used.  3859444 avail Mem&lt;/p
         <category>Average+</category>
         
         <category>CPU</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>What happens BEFORE Linux Boots up!</title>
-        <description>&lt;h2 id=&quot;the-warm-up-before-the-boot-process&quot;&gt;The Warm up before the Boot Process&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;On the ground level boot process starts with loading the operating system (where machine doesn't know anything about operating system) from any of the storage device.
-So without wasting time I will get into the deeper level.
-
-On this initial stage we donot have privilege even of the file system. What we have is the BIOS - a collection of software routines that are initially loaded from chip into the memory and initialised when we switch on the computer. BIOS makes some hardware checks to ensure all hardaware componenets are at stable switched on state.
-
-So, now we know that we have something called BIOS that could be of some help.
-BIOS cannot load the operating system as a 'file' as we mentioned above that it doesn't know about file system.
-
-BIOS must read specific sectors of data from specific physical location of the disk devices.
-BIOS load the OS from the first sector of the disk device. Here we can have multiple disk devices that may confuse BIOS to which device it should read from.
-
-CPU cannot differentiate between code and data, for CPU both are instructions.
-Here comes the magic number which is a unsophisticated way of BIOS to determine the boot sector.
-BIOS loops through each disk device, read the boot sector into memory and search for the magic number which is 0xaa55 and instructs CPU to begin executing the first boot sector it finds that ends with the magic number.
-&lt;/code&gt;&lt;/pre&gt;
-
-</description>
-        <pubDate>Wed, 28 Nov 2018 01:48:00 +0530</pubDate>
-        <link>/blog/tutorial/What-happens-before-Linux-Boots-up!</link>
-        <guid isPermaLink="true">/blog/tutorial/What-happens-before-Linux-Boots-up!</guid>
-        
-        <category>BIOS</category>
-        
-        <category>+</category>
-        
-        <category>File</category>
-        
-        <category>+</category>
-        
-        <category>MagicNumber</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>My Art Gallery</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/media/img/drawing1.jpg&quot; alt=&quot;Drawing1&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-April 24, 2018 and it all began…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing2.jpg&quot; alt=&quot;Drawing2&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-April 25, 2018 mornings started like this…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing3.jpg&quot; alt=&quot;Drawing3&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-and this one April 26 2018…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing4.jpg&quot; alt=&quot;Drawing4&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-April 27 2018 …&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing5.jpg&quot; alt=&quot;Drawing5&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-May 1st 2018 another one to present somebody…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing6.jpg&quot; alt=&quot;Drawing6&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-May 2nd 2018 was also awesome…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing7.jpg&quot; alt=&quot;Drawing7&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-May 5th 2018 with some break now…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing8.jpg&quot; alt=&quot;Drawing8&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-October 07 2018 and busy again with some goals….&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/drawing9.jpg&quot; alt=&quot;Drawing9&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 05 2019 and I am back!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/dream.jpeg&quot; alt=&quot;dream.jpeg&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 07 2019 and Dreaming about someone…&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/imagination.jpeg&quot; alt=&quot;imagination.jpeg&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 09 2019 Just the imagination..&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/perfect_together.jpeg&quot; alt=&quot;perfect_together.jpeg&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 10 2019 Imperfections around but perfect together..&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/grandpa.jpg&quot; alt=&quot;grandpa.jpg&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 10 2019 grandpa :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/media/img/kashmir.jpg&quot; alt=&quot;kashmir.jpg&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;
-August 12 2019 A view of Kashmir… (use of water color)&lt;/p&gt;
-</description>
-        <pubDate>Thu, 18 Oct 2018 22:10:00 +0530</pubDate>
-        <link>/blog/tutorial/Art-Gallery</link>
-        <guid isPermaLink="true">/blog/tutorial/Art-Gallery</guid>
-        
-        <category>Paintings</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>How to setup Mesos, Marathon, Zookeeper and Docker</title>
-        <description>&lt;h1 id=&quot;mesos&quot;&gt;Mesos&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;is open source cluster manager, It provides resource isolation and sharing across distributed applications.&lt;/li&gt;
-  &lt;li&gt;Mesos consists of a master daemon that manages slave daemons running on each cluster node. Mesos frameworks are applications that run on Mesos and run tasks on these slaves&lt;/li&gt;
-  &lt;li&gt;Mesos uses a two-level scheduling mechanism where resource offers are made to frameworks. The Mesos master node decides how many resources to offer each framework, while each framework determines the resources it accepts and what application to execute on those resources.
-For more insight refer this: &lt;a href=&quot;https://mesos.apache.org/documentation/latest/architecture/&quot;&gt;
-Mesos Architecture and Overview
-&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;marathon&quot;&gt;Marathon&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;is a container orchestration platform running on Mesos.&lt;/li&gt;
-  &lt;li&gt;Multiple Container formats are supported.
-For more insight refer this: &lt;a href=&quot;https://mesosphere.github.io/marathon/&quot;&gt;
-Marathon Architecture and Overview
-&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;zookeeper&quot;&gt;Zookeeper&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;ZooKeeper is a distributed co-ordination service to manage large set of hosts. Co-ordinating and managing a service in a distributed environment is solved by ZooKeeper with its simple architecture and API. &lt;/li&gt;
-  &lt;li&gt;If the Mesos master is unavailable, existing tasks can continue to execute, but new resources cannot be allocated and new tasks cannot be launched. To reduce the chance of this situation occurring, Mesos has a high-availability mode that uses multiple Mesos masters: one active master (called the leader or leading master) and several backups in case it fails. The masters elect the leader, with Apache ZooKeeper both coordinating the election and handling leader detection by masters, agents, and scheduler drivers.
-For more insight refer this: &lt;a href=&quot;https://zookeeper.apache.org/doc/trunk/zookeeperOver.html&quot;&gt;
-Zookeeper Architecture and Overview
-&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;master-nodes-setup&quot;&gt;Master Nodes Setup&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Package Installation&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Highly-available clusters will typically have multiple master nodes and any number of slave nodes. Each master node runs Apache Mesos, Marathon and ZooKeeper (to provide leader  election).&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Setup repositories:
-        &lt;ul&gt;
-          &lt;li&gt;The easiest way to install Mesos is via the GitHub repositories.Mesosphere has official package repositories which connect directly to the native package management tools of your favorite Linux distribution — namely apt-get and yum — to install Mesos on top of the most common Linux distributions.
-            &lt;ol&gt;
-              &lt;li&gt;Commands for Ubuntu&lt;/li&gt;
-            &lt;/ol&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Setup&lt;br /&gt;
-  &lt;code&gt;sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BF DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]') CODENAME=$(lsb_release -cs)&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;Add the repository&lt;br /&gt;
-  &lt;code&gt;echo &quot;deb https://repos.mesosphere.com/${DISTRO} ${CODENAME} main&quot; | sudo tee /etc/apt/sources.list.d/mesosphere.list&lt;/code&gt;
-  &lt;code&gt;sudo apt-get -y update&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;Install&lt;br /&gt;
-  &lt;code&gt;sudo apt-get -y install mesos marathon&lt;/code&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Configuration&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The Mesosphere package ships with a default configuration. The default configuration includes:&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;
-      &lt;li&gt;File: /etc/default/mesos&lt;br /&gt;
- sets master and slave log dir to /var/log/mesos.&lt;/li&gt;
-      &lt;li&gt;File: /etc/default/mesos-master&lt;br /&gt;
-	sets port to 5050.  &lt;br /&gt;
- sets zk to the value in the file /etc/mesos/zk.&lt;/li&gt;
-      &lt;li&gt;File: /etc/default/mesos-slave&lt;br /&gt;
- sets master as the value of /etc/mesos/zk&lt;/li&gt;
-      &lt;li&gt;File: /etc/mesos/zk&lt;br /&gt;
-	sets the ZooKeeper instance to zk://localhost:2181/mesos&lt;/li&gt;
-      &lt;li&gt;File: /etc/mesos-master/work_dir&lt;br /&gt;
- sets working_dir to var/lib/mesos&lt;/li&gt;
-      &lt;li&gt;File: /etc/mesos-master/quorum&lt;br /&gt;
- sets quorum to 1&lt;br /&gt;
-	&lt;em&gt;This default configuration allows Mesos to start immediately on a single node.&lt;/em&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Configure Zookeeper:&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Setting ID&lt;br /&gt;
- Set /etc/zookeeper/conf/myid to a unique integer between 1 and 255 on each node.The Mesosphere package ships with a default configuration&lt;/li&gt;
-      &lt;li&gt;Server Addresses&lt;br /&gt;
- Append the following values to /etc/zookeeper/conf/zoo.cfg on each node, replacing the IP addresses with your own:&lt;br /&gt;
- &lt;code&gt;server.1=1.1.1.1:2888:3888&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;server.2=2.2.2.2:2888:3888&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;server.3=3.3.3.3:2888:3888&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Start Zookeeper&lt;br /&gt;
- &lt;code&gt;sudo service zookeeper restart&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Mesos &amp;amp; Marathon&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;ZooKeeper&lt;br /&gt;
- On each node, replacing the IP addresses below with each master’s IP address, set/etc/mesos/zk to:&lt;br /&gt;
- &lt;code&gt;zk://1.1.1.1:2181,2.2.2.2:2181,3.3.3.3:2181/mesos&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Quorum&lt;br /&gt;
- Set /etc/mesos-master/quorum on each master node to a number greater than the number of masters divided by 2. For example, the optimal quorum size for a five node master cluster would be 3. In this case, there are three masters and the quorum size should be set to 2 on each node.&lt;/li&gt;
-      &lt;li&gt;Host name&lt;br /&gt;
- In case unable to resolve the hostname of the machine directly, set /etc/mesos-master/hostname to a value that you can resolve.&lt;br /&gt;
- For example, an externally accessible IP address or DNS hostname. This will ensure all links from the Mesos console work correctly.&lt;br /&gt;
- Also, set this property in /etc/marathon/conf/hostname&lt;/li&gt;
-      &lt;li&gt;Disable mesos-slave service&lt;br /&gt;
- &lt;code&gt;sudo service mesos-slave stop&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;sudo sh -c &quot;echo manual &amp;gt; /etc/init/mesos-slave.override&quot;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Restart Services&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Bring up Mesos master&lt;br /&gt;
-&lt;code&gt;sudo service mesos-master restart&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Now restart Marathon&lt;br /&gt;
-&lt;code&gt;sudo service marathon restart&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;slave-nodes-setup&quot;&gt;Slave Nodes Setup&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Package Installation&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Setup repositories:
-        &lt;ol&gt;
-          &lt;li&gt;Commands for Ubuntu
-            &lt;ul&gt;
-              &lt;li&gt;Setup&lt;br /&gt;
- &lt;code&gt;sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E56151BFDISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]') CODENAME=$(lsb_release -cs)&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt; Add the repository&lt;br /&gt;
- &lt;code&gt;echo &quot;deb https://repos.mesosphere.com/${DISTRO} ${CODENAME} main&quot; | sudo tee /etc/apt/sources.list.d/mesosphere.list&lt;/code&gt;&lt;br /&gt;
-          &lt;code&gt;sudo apt-get -y update&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;Install&lt;br /&gt;
-          &lt;code&gt;sudo apt-get -y install mesos&lt;/code&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Configuration&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Disable Zookeeper:&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;
-      &lt;li&gt;If you’re using the Debian or Ubuntu package, ZooKeeper will be pulled in and installed as a dependency automaticallyi.    &lt;br /&gt;
- &lt;code&gt;sudo service zookeeper stop&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;sudo sh -c &quot;echo manual &amp;gt; /etc/init/zookeeper.override&quot;&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Mesos
-            &lt;ol&gt;
-              &lt;li&gt;ZooKeeper&lt;br /&gt;
- On each node, replacing the IP addresses below with each master’s IP address, set/etc/mesos/zk to:&lt;br /&gt;
- &lt;code&gt;zk://1.1.1.1:2181,2.2.2.2:2181,3.3.3.3:2181/mesos&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;Disable mesos-master service&lt;br /&gt;
- &lt;code&gt;sudo service mesos-master stop&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;sudo sh -c &quot;echo manual &amp;gt; /etc/init/mesos-master.override&quot;&lt;/code&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Start Services&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Restart mesos-slave on each node to use the new configuration:&lt;br /&gt;
-&lt;code&gt;sudo service mesos-slave restart&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Verify Installation&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;If the packages were installed and configured correctly, you should be able to access the Mesos console at &lt;code&gt;https://&amp;lt;master-ip&amp;gt;:5050&lt;/code&gt; and the Marathon console at &lt;code&gt;https://&amp;lt;master-ip&amp;gt;:8080&lt;/code&gt; (where &lt;master-ip&gt; is any of the master IP addresses).&lt;/master-ip&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;docker&quot;&gt;Docker&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker is an open platform for developing, shipping, and running applications. Docker is designed to deliver your applications faster. With Docker you can separate your applications from  your infrastructure and treat your infrastructure like a managed application.&lt;/li&gt;
-  &lt;li&gt;Docker helps you ship code faster, test faster, deploy faster, and shorten the cycle between writing code and running code.
-For more insight refer this: &lt;a href=&quot;https://docs.docker.com/engine/understanding-docker/&quot;&gt;
-Docker Architecture and Overview
-&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;These instructions are intended for installing Docker on Ubuntu. Docker’s APT repository contains Docker 1.7.1 and higher. To set APT to use packages from the new repository.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;docker-installation&quot;&gt;Docker Installation&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Update your apt sources&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Log into your machine as a user with sudo or root privileges.&lt;/li&gt;
-      &lt;li&gt;Open a terminal window.&lt;/li&gt;
-      &lt;li&gt;Update package information, ensure that APT works with the https method, and that CA certificates are installed.&lt;br /&gt;
- &lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;sudo apt-get install apt-transport-https ca-certificates&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Add the new GPG key
- &lt;code&gt;sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Open the /etc/apt/sources.list.d/docker.list file in your favorite editor.&lt;/li&gt;
-      &lt;li&gt;If the file doesn’t exist, create it.&lt;/li&gt;
-      &lt;li&gt;Remove any existing entries.&lt;/li&gt;
-      &lt;li&gt;Add an entry for your Ubuntu operating system.&lt;br /&gt;
- &lt;code&gt;deb https://apt.dockerproject.org/repo ubuntu-trusty main&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Save and close the /etc/apt/sources.list.d/docker.list file.&lt;/li&gt;
-      &lt;li&gt;Update the APT package index.&lt;br /&gt;
- &lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Purge the old repo if it exists.&lt;br /&gt;
- &lt;code&gt;sudo apt-get purge lxc-docker&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Verify that APT is pulling from the right repository.&lt;br /&gt;
- &lt;code&gt;apt-cache policy docker-engine&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;From now on when you run &lt;code&gt;apt-get upgrade&lt;/code&gt;, APT pulls from the new repository.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Prerequisites by Ubuntu Version&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;For Ubuntu Trusty, Wily, and Xenial, it’s recommended to install the linux-image-extra kernel package. Thelinux-image-extra package allows you use the aufs storage driver.&lt;br /&gt;
-To install the linux-image-extra package for your kernel version:&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Open a terminal on your Ubuntu host.&lt;/li&gt;
-      &lt;li&gt;Update your package manager.&lt;br /&gt;
- &lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Install the recommended package.&lt;br /&gt;
- &lt;code&gt;sudo apt-get install linux-image-extra-$(uname -r)&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Go ahead and install Docker.&lt;br /&gt;
- If you are installing on Ubuntu 14.04 or 12.04, apparmor is required. You can install it using: apt-get install apparmor.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Install&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Make sure you have installed the prerequisites for your Ubuntu version.Then, install Docker using the following:&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Log into your Ubuntu installation as a user with sudo privileges.&lt;/li&gt;
-      &lt;li&gt;Update your APT package index.&lt;br /&gt;
- &lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Install Docker.&lt;br /&gt;
- &lt;code&gt;sudo apt-get install docker-engine&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Start the docker daemon.&lt;br /&gt;
- &lt;code&gt;sudo service docker start&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Verify docker is installed correctly.&lt;br /&gt;
- &lt;code&gt;sudo docker run hello-world&lt;/code&gt;&lt;br /&gt;
- This command downloads a test image and runs it in a container. When the container runs, it prints an informational message. Then, it exits.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Create a Docker group&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user root and other users can access it with sudo. For this reason, docker daemon always runs as the rootuser.&lt;br /&gt;
-To avoid having to use sudo when you use the docker command, create a Unix group called docker and add users to it. When the docker daemon starts, it makes the ownership of the Unix socket read/writable by thedocker group.&lt;/li&gt;
-      &lt;li&gt;To create the docker group and add your user:&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Log into Ubuntu as a user with sudo privileges.&lt;br /&gt;
- This procedure assumes you log in as the ubuntu user.&lt;/li&gt;
-      &lt;li&gt;Create the docker group.&lt;br /&gt;
- &lt;code&gt;sudo groupadd docker&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Add your user to docker group.&lt;br /&gt;
- &lt;code&gt;sudo usermod -aG docker ubuntu&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Log out and log back in.&lt;br /&gt;
- This ensures your user is running with the correct permissions.&lt;/li&gt;
-      &lt;li&gt;Verify your work by running docker without sudo.&lt;br /&gt;
- &lt;code&gt;docker run hello-world&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;If this fails with a message similar to this:&lt;br /&gt;
- &lt;em&gt;Cannot connect to the Docker daemon. Is ‘docker daemon’ running on this host?&lt;/em&gt;&lt;br /&gt;
- Check that the DOCKER_HOST environment variable is not set for your shell. If it is, unset it.
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Upgrade Docker&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;To install the latest version of Docker with apt-get:&lt;br /&gt;
- &lt;code&gt;sudo apt-get upgrade docker-engine&lt;/code&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Uninstall Docker&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;To uninstall the Docker package:&lt;br /&gt;
- &lt;code&gt;sudo apt-get purge docker-engine&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;To uninstall the Docker package and dependencies that are no longer needed:&lt;br /&gt;
- &lt;code&gt;sudo apt-get autoremove --purge docker-engine&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;To delete all images, containers, and volumes or user created configuration files on your host run the following command:&lt;br /&gt;
- &lt;code&gt;rm -rf /var/lib/docker&lt;/code&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;deploying-a-container-within-the-architecture&quot;&gt;Deploying a container within the Architecture&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Deployment with script:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Create a small json file which will contain app information to be deployed:&lt;br /&gt;
- Eg: definition.json&lt;br /&gt;
- &lt;code&gt;{&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;container&quot;: {&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;type&quot;: &quot;DOCKER”,&lt;/code&gt; &lt;br /&gt;
- &lt;code&gt;&quot;docker&quot;: {&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;image&quot;: &quot;superguenter/demo-app”&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;}&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;},&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;cmd&quot;: &quot;python -m SimpleHTTPServer $PORT”,&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;id&quot;: &quot;demo”,&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;cpus&quot;: 0.01,&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;mem&quot;: 256,&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;&quot;ports&quot;: [3000]&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;}&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;Now to deploy the app below is the python code:&lt;br /&gt;
- &lt;code&gt;import requests&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;import json&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;import pprint&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;url = &quot;https://localhost:8080/v2/apps&quot;&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;res = requests.post( url, data=open('/path/to/json/file/definition.json','rb'), headers={'Content-Type': 'application/json'})&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;json_data = json.loads(res.text)&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;pp = pprint.PrettyPrinter(indent=4)&lt;/code&gt;&lt;br /&gt;
- &lt;code&gt;pp.pprint (json_data)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Deployment through dashboard:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Login to dashboard Localhost:8080 marathon is running on 8080.&lt;/li&gt;
-      &lt;li&gt;Click on the createApplication&lt;/li&gt;
-      &lt;li&gt;Enter the ID (ID should be unique), allocate the CPU, memory usuage as required.&lt;/li&gt;
-      &lt;li&gt;Now, go to DockerContainer: Provide the image name that you have created.&lt;/li&gt;
-      &lt;li&gt;Click on Create Application&lt;/li&gt;
-      &lt;li&gt;You should be able to see the image name with status as Running/Delayed/Waiting.&lt;/li&gt;
-      &lt;li&gt;Running refers: Success&lt;/li&gt;
-      &lt;li&gt;Delayed refers:  Failed&lt;/li&gt;
-      &lt;li&gt;Waiting refers:  Waiting to be started&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Deployment with  Rest API:&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Execute the following command in the server. Make sure you have provided the required components correctly in the json file.&lt;br /&gt;
-&lt;code&gt;curl -X POST -H &quot;Content-Type: application/json&quot; https://localhost:8080/v2/apps -d@docker.json&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Thu, 15 Dec 2016 03:24:00 +0530</pubDate>
-        <link>/blog/tutorial/MMZD</link>
-        <guid isPermaLink="true">/blog/tutorial/MMZD</guid>
-        
-        <category>Mesos+Marathon+Zookeeper+Docker</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>Docker Vs VirtualMachine</title>
-        <description>&lt;h2 id=&quot;explaination-of-the-architecture&quot;&gt;Explaination Of the Architecture&lt;/h2&gt;
-
-&lt;h4 id=&quot;docker&quot;&gt;Docker&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Image is a box with set of all containers with small layered images. An image is an executable package that includes everything needed to run an application–the code, a runtime, libraries, environment variables, and configuration files.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A container is launched by running an image.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A container is a runtime instance of an image–what the image becomes in memory when executed (that is, an image with state, or a user process).&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;virtual-machine&quot;&gt;Virtual Machine&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;A virtual Machine is an image of operating system running on Hypervisor over host operating system.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Comparision Basis&lt;/td&gt;
-      &lt;td&gt;Docker&lt;/td&gt;
-      &lt;td&gt;Virtual machine&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Architecture&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;/media/img/Architecture_Docker.png&quot; alt=&quot;Docker&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;/media/img/Architecture_VM.png&quot; alt=&quot;Virtual Machine&quot; height=&quot;70%&quot; width=&quot;100%&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Build&lt;/td&gt;
-      &lt;td&gt;Only Binaries and libraries of OS over which services run&lt;/td&gt;
-      &lt;td&gt;Image of the entire OS&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Virtualization&lt;/td&gt;
-      &lt;td&gt;OS level virtualization by abstracting user space&lt;/td&gt;
-      &lt;td&gt;Hardware Virtualization&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Processing boundaries&lt;/td&gt;
-      &lt;td&gt;Container have private space for processing, can execute commands as root&lt;/td&gt;
-      &lt;td&gt;Virtual Box have confined space for processing and can execue command as user&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;kernel boundaries&lt;/td&gt;
-      &lt;td&gt;Container share host sytstem kernel&lt;/td&gt;
-      &lt;td&gt;Virtual Box share host system kernel with Guest Operating System with Hypervisor&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-</description>
-        <pubDate>Tue, 01 Nov 2016 17:58:00 +0530</pubDate>
-        <link>/blog/tutorial/DockerAndVM</link>
-        <guid isPermaLink="true">/blog/tutorial/DockerAndVM</guid>
-        
-        <category>Docker</category>
-        
-        <category>+VirtualMachine</category>
         
         
         <category>Tutorial</category>
