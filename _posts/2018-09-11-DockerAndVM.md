@@ -9,7 +9,7 @@ author:            Poonam Agrawal
 ## Explaination Of the Architecture
 
 #### Docker
-- Image is a box with set of all containers with small layered images. An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files. 
+- An image is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files. 
 
 - A container is launched by running an image. 
 
