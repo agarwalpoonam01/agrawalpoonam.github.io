@@ -5,13 +5,13 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 03 Dec 2023 20:13:50 +0530</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 20:13:50 +0530</lastBuildDate>
+      <pubDate>Sun, 03 Dec 2023 20:19:27 +0530</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2023 20:19:27 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>Elasticsearch Architecture</title>
-        <description>&lt;h3 id=&quot;architecture-architecture&quot;&gt;Architecture Architecture&lt;/h3&gt;
+        <description>&lt;h3 id=&quot;elasticsearch-architecture&quot;&gt;Elasticsearch Architecture&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;- An elasticsearch cluster is made up of number of nodes.
 - Each node is nothing but an instance of elasticsearch i.e. service.

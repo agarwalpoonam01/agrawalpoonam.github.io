@@ -6,7 +6,7 @@ tags: Basics
 category: Tutorial
 author: Poonam Agarwal
 ---
-### Architecture Architecture
+### Elasticsearch Architecture
 
 	- An elasticsearch cluster is made up of number of nodes.
 	- Each node is nothing but an instance of elasticsearch i.e. service.
