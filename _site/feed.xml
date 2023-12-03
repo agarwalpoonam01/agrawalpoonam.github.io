@@ -5,8 +5,8 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 03 Dec 2023 20:19:27 +0530</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 20:19:27 +0530</lastBuildDate>
+      <pubDate>Sun, 03 Dec 2023 20:26:39 +0530</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2023 20:26:39 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -16,8 +16,8 @@
 &lt;pre&gt;&lt;code&gt;- An elasticsearch cluster is made up of number of nodes.
 - Each node is nothing but an instance of elasticsearch i.e. service.
 - The data in elasticsearch is stored in index, you can compare it as database in relational database.
-- The index can have any limit of data but this can create problem while operation as the index is becoming large.
-- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger 	index. There can be more than one shard for an index.
+- The index can have any limit of data but this can create problem while operation as the index is large.
+- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger	index. There can be more than one shard for an index.
 - Shard contains data represented as documents. 
 - Documents can be compared with rows in relational database.
 &lt;/code&gt;&lt;/pre&gt;
