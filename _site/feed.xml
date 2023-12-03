@@ -5,39 +5,39 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 19 Nov 2023 17:10:42 +0530</pubDate>
-    <lastBuildDate>Sun, 19 Nov 2023 17:10:42 +0530</lastBuildDate>
+      <pubDate>Sun, 03 Dec 2023 13:10:08 +0530</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2023 13:10:08 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
-        <title>Elasticsearch in a glance</title>
+        <title>Elasticsearch at a glance</title>
         <description>&lt;h3 id=&quot;what&quot;&gt;What?&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt; ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt; We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
- Query can retriev data in any form required.
- Possible to analyze billions of records in few seconds.
- Provides aggregations which can explore trends and patterns of data.
-&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/media/img/why-elastic.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
 
 &lt;h3 id=&quot;how&quot;&gt;How?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt; A is document like a row in a relational database, representing a given entity — the thing you’re searching for. 
+&lt;pre&gt;&lt;code&gt; - A document is like a row in a relational database, representing a given entity — the thing you’re searching for. 
  For example, a document can represent an encyclopedia article or log entries from a web server.   
-
- An index is a collection of documents that have similar characteristics.
-
- An index in Elasticsearch is actually what’s called an inverted index.
- Instead of searching the text directly it searches the index.
- An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. The term “name” occurs in document A and B, so it is mapped to that document.
+ - An index is a collection of documents that have similar characteristics.
+ - An index in Elasticsearch is actually what’s called an inverted index.
+ - Instead of searching the text directly it searches the index.
+ - An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. 
+ - The term “name” occurs in document A and B, so it is mapped to that document.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;div&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/media/img/inverted-index.png&quot; /&gt;
-&lt;figcaption&gt;Inverted index&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;/div&gt;
