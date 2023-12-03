@@ -11,21 +11,28 @@ author: Poonam Agarwal
 
 
 ### Why?
-	 We can perform various kind of search irrespective of there data type which included structured, unstructured, geo and metrics data type.
+	 We can perform various kind of search irrespective of there data type which included structured, unstructured, geo  and metrics data type.
+
 	 Query can retrieve data in any form required.
+
 	 Possible to analyze billions of records in few seconds.
+	 
 	 Provides aggregations which can explore trends and patterns of data.
 
 
 ### How?
-	 A is document like a row in a relational database, representing a given entity — the thing you’re searching for. 
+	 A document is like a row in a relational database, representing a given entity — the thing you’re searching for. 
 	 For example, a document can represent an encyclopedia article or log entries from a web server.   
 
 	 An index is a collection of documents that have similar characteristics.
 
 	 An index in Elasticsearch is actually what’s called an inverted index.
+	 
 	 Instead of searching the text directly it searches the index.
-	 An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. The term “name” occurs in document A and B, so it is mapped to that document.
+	 
+	 An inverted index lists every unique word that appears in any text being searched and identifies all of the saved document for each word occur. 
+
+	 The term “name” occurs in document A and B, so it is mapped to that document.
 	 
 <div>
 
