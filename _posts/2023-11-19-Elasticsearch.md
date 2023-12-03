@@ -7,7 +7,10 @@ category: Tutorial
 author: Poonam Agarwal
 ---
 ### What?
-	 ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
+	 - ElasticSearch is a search engine (lucene based )
+	 - Which stores JSON data (using the inverse index data structure) 
+	 - Processes it
+	 - Supports full text based search using REST APIs
 
 
 ### Why?

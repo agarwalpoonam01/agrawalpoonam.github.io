@@ -5,14 +5,17 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 03 Dec 2023 14:15:12 +0530</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 14:15:12 +0530</lastBuildDate>
+      <pubDate>Sun, 03 Dec 2023 14:29:56 +0530</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2023 14:29:56 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>Elasticsearch at a glance</title>
         <description>&lt;h3 id=&quot;what&quot;&gt;What?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt; ElasticSearch is a lucene based search engine which stores JSON data using the inverse index data structure, processes it and that supports full text based search using REST APIs
+&lt;pre&gt;&lt;code&gt; - ElasticSearch is a search engine (lucene based )
+ - Which stores JSON data (using the inverse index data structure) 
+ - Processes it
+ - Supports full text based search using REST APIs
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
