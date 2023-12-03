@@ -156,6 +156,96 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Elasticsearch Architecture</h1>
+            <section class="post-meta">
+                <time datetime="2023-12-03T15:20:00+05:30" itemprop="datePublished">Dec 3, 2023</time> 
+                on
+                
+                <span><a href="">Basics</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="architecture-architecture">Architecture Architecture</h3>
+
+<pre><code>- An elasticsearch cluster is made up of number of nodes.
+- Each node is nothing but an instance of elasticsearch i.e. service.
+- The data in elasticsearch is stored in index, you can compare it as database in relational database.
+- The index can have any limit of data but this can create problem while operation as the index is becoming large.
+- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger 	index. There can be more than one shard for an index.
+- Shard contains data represented as documents. 
+- Documents can be compared with rows in relational database.
+</code></pre>
+
+<div>
+<figure>
+<img src="/media/img/elasticsearch-architecture.png" />
+</figure>
+
+</div>
+
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">Elasticsearch at a glance</h1>
             <section class="post-meta">
                 <time datetime="2023-11-09T15:20:00+05:30" itemprop="datePublished">Nov 9, 2023</time> 

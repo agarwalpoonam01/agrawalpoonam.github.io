@@ -2,6 +2,17 @@
 
   
     {
+        "title": "Elasticsearch Architecture",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Elasticsearch-Architecture",
+        "tags": ["Basics"],
+        "date": "2023-12-03 15:20:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
         "title": "Elasticsearch at a glance",
         "category": "Tutorial",
         "url": "/blog/tutorial/Elasticsearch",
