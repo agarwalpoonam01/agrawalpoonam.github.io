@@ -2,9 +2,9 @@
 
   
     {
-        "title": "Elasticsearch Architecture",
+        "title": "Elasticsearch Cluster Overview",
         "category": "Tutorial",
-        "url": "/blog/tutorial/Elasticsearch-Architecture",
+        "url": "/blog/tutorial/Elasticsearch-Cluster-Overview",
         "tags": ["Basics"],
         "date": "2023-12-03 15:20:00 +0530",
         "language": "en"

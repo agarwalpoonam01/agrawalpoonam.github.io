@@ -5,34 +5,34 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sun, 03 Dec 2023 20:26:39 +0530</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 20:26:39 +0530</lastBuildDate>
+      <pubDate>Thu, 14 Dec 2023 20:01:22 +0530</pubDate>
+    <lastBuildDate>Thu, 14 Dec 2023 20:01:22 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
-        <title>Elasticsearch Architecture</title>
-        <description>&lt;h3 id=&quot;elasticsearch-architecture&quot;&gt;Elasticsearch Architecture&lt;/h3&gt;
+        <title>Elasticsearch Cluster Overview</title>
+        <description>&lt;h3 id=&quot;elasticsearch-cluster-overview&quot;&gt;Elasticsearch Cluster Overview&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;- An elasticsearch cluster is made up of number of nodes.
-- Each node is nothing but an instance of elasticsearch i.e. service.
+- Each node is nothing but an instance of elasticsearch.
 - The data in elasticsearch is stored in index, you can compare it as database in relational database.
 - The index can have any limit of data but this can create problem while operation as the index is large.
-- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger	index. There can be more than one shard for an index.
+- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger index. There can be more than one shard for an index.
 - Shard contains data represented as documents. 
 - Documents can be compared with rows in relational database.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;div&gt;
 &lt;figure&gt;
-&lt;img src=&quot;/media/img/elasticsearch-architecture.png&quot; /&gt;
+&lt;img src=&quot;/media/img/elasticsearch-cluster-overview.png&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;/div&gt;
 
 </description>
         <pubDate>Sun, 03 Dec 2023 15:20:00 +0530</pubDate>
-        <link>/blog/tutorial/Elasticsearch-Architecture</link>
-        <guid isPermaLink="true">/blog/tutorial/Elasticsearch-Architecture</guid>
+        <link>/blog/tutorial/Elasticsearch-Cluster-Overview</link>
+        <guid isPermaLink="true">/blog/tutorial/Elasticsearch-Cluster-Overview</guid>
         
         <category>Basics</category>
         

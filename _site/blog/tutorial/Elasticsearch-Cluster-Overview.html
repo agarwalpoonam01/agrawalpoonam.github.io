@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Elasticsearch Architecture</title>
-    <meta name="description" content="Elasticsearch Architecture">
+    <title>Elasticsearch Cluster Overview</title>
+    <meta name="description" content="Elasticsearch Cluster Overview">
   
     
     <meta name="keywords" content="Basics" />
@@ -18,7 +18,7 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="Elasticsearch Architecture" />
+	<meta property="og:title" content="Elasticsearch Cluster Overview" />
 	<meta property="og:type" content="article" />
 
 
@@ -28,10 +28,10 @@
 
 
 <meta property="og:site_name" content="Life  is  Short  Do  More" />
-<meta property="og:description" content="Elasticsearch Architecture" />
+<meta property="og:description" content="Elasticsearch Cluster Overview" />
 
 
-<meta property="og:url" content="/blog/tutorial/Elasticsearch-Architecture" />
+<meta property="og:url" content="/blog/tutorial/Elasticsearch-Cluster-Overview" />
 
 
     
@@ -57,15 +57,15 @@
 
 
 
-<meta name="twitter:title" content="Elasticsearch Architecture">
+<meta name="twitter:title" content="Elasticsearch Cluster Overview">
 
 
 
 
-<meta name="twitter:url" content="/blog/tutorial/Elasticsearch-Architecture">
+<meta name="twitter:url" content="/blog/tutorial/Elasticsearch-Cluster-Overview">
 
 
-<meta name="twitter:description" content="Elasticsearch Architecture">
+<meta name="twitter:description" content="Elasticsearch Cluster Overview">
 
 <meta name="twitter:image:src" content="/assets/mountain-cover.jpg">
 <!-- End: Twitter data -->	
@@ -156,7 +156,7 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">Elasticsearch Architecture</h1>
+            <h1 class="post-title" itemprop="name headline">Elasticsearch Cluster Overview</h1>
             <section class="post-meta">
                 <time datetime="2023-12-03T15:20:00+05:30" itemprop="datePublished">Dec 3, 2023</time>
                 on
@@ -167,20 +167,20 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <h3 id="elasticsearch-architecture">Elasticsearch Architecture</h3>
+            <h3 id="elasticsearch-cluster-overview">Elasticsearch Cluster Overview</h3>
 
 <pre><code>- An elasticsearch cluster is made up of number of nodes.
-- Each node is nothing but an instance of elasticsearch i.e. service.
+- Each node is nothing but an instance of elasticsearch.
 - The data in elasticsearch is stored in index, you can compare it as database in relational database.
 - The index can have any limit of data but this can create problem while operation as the index is large.
-- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger	index. There can be more than one shard for an index.
+- Now, to deal with this situation a shard needs to be created as a unit of data that represents a subset of a larger index. There can be more than one shard for an index.
 - Shard contains data represented as documents. 
 - Documents can be compared with rows in relational database.
 </code></pre>
 
 <div>
 <figure>
-<img src="/media/img/elasticsearch-architecture.png" />
+<img src="/media/img/elasticsearch-cluster-overview.png" />
 </figure>
 
 </div>
