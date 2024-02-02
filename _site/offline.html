@@ -156,6 +156,108 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
+            <h1 class="post-title" itemprop="name headline">Distributed Tracing</h1>
+            <section class="post-meta">
+                <time datetime="2023-12-03T15:20:00+05:30" itemprop="datePublished">Dec 3, 2023</time> 
+                on
+                
+                <span><a href="">Basics</a></span>
+                
+            </section>
+        </header>
+
+        <section class="post-content short-diver" itemprop="articleBody">
+            <h3 id="distributed-tracing">Distributed tracing:</h3>
+<pre><code>- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough enough to understand where the fault is.
+- Distributed tracing enables visibility of how request flow into the system by collecting the information such as time taken at each step , errors, failures etc.
+</code></pre>
+
+<h3 id="components-of-distributed-tracing">Components of Distributed tracing:</h3>
+
+<pre><code>- Trace: Request from source to destination having different service hops in between. Traces are made up of spans.
+- Span: A Single operation within a service. A service can have multiple spans. Primary building block of a trace. 
+- Context: Passing context between different components or service in a distributed system.
+- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage tracing data.
+- Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
+- Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
+</code></pre>
+
+<h3 id="how-does-distributed-tracing-works">How does distributed tracing works?</h3>
+
+<pre><code>- Trace-id gets attached to an incoming request to the system. This identifies the request during its lifespan within the system.
+- For every Child Span their is a Parent Span id associated.
+- While the request flows in the system instrumentation library keeps on adding context data such as start time, end time, and metadata about each operation (span). 
+- Trace data gets stored and then is visualized.
+</code></pre>
+
+<div>
+<figure>
+<img src="/media/img/distributed-tracing.png" />
+</figure>
+
+</div>
+
+
+        </section>
+
+        <footer class="post-footer"> 
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+
+    
+
+    
+    
+
+    
+
+</div>
+        </footer>
+
+    </article>
+</main>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="content" role="main">
+    <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
+
+        <header class="post-header short-diver">
             <h1 class="post-title" itemprop="name headline">Elasticsearch Cluster Overview</h1>
             <section class="post-meta">
                 <time datetime="2023-12-03T15:20:00+05:30" itemprop="datePublished">Dec 3, 2023</time> 
@@ -2557,7 +2659,7 @@ var config = {
 
         <footer class="site-footer">
     <button class="go-to-top"></button>
-    <p class="copyright"><a href="" title="Life  is  Short  Do  More">Life  is  Short  Do  More</a> &copy; 2023 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
+    <p class="copyright"><a href="" title="Life  is  Short  Do  More">Life  is  Short  Do  More</a> &copy; 2024 | <a href="/feed.xml" title="RSS Feed">RSS Feed</a></p>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

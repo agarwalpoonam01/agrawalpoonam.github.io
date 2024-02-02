@@ -5,9 +5,53 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Thu, 14 Dec 2023 20:01:22 +0530</pubDate>
-    <lastBuildDate>Thu, 14 Dec 2023 20:01:22 +0530</lastBuildDate>
+      <pubDate>Fri, 02 Feb 2024 19:26:29 +0530</pubDate>
+    <lastBuildDate>Fri, 02 Feb 2024 19:26:29 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>Distributed Tracing</title>
+        <description>&lt;h3 id=&quot;distributed-tracing&quot;&gt;Distributed tracing:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough enough to understand where the fault is.
+- Distributed tracing enables visibility of how request flow into the system by collecting the information such as time taken at each step , errors, failures etc.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;components-of-distributed-tracing&quot;&gt;Components of Distributed tracing:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;- Trace: Request from source to destination having different service hops in between. Traces are made up of spans.
+- Span: A Single operation within a service. A service can have multiple spans. Primary building block of a trace. 
+- Context: Passing context between different components or service in a distributed system.
+- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage tracing data.
+- Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
+- Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;how-does-distributed-tracing-works&quot;&gt;How does distributed tracing works?&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;- Trace-id gets attached to an incoming request to the system. This identifies the request during its lifespan within the system.
+- For every Child Span their is a Parent Span id associated.
+- While the request flows in the system instrumentation library keeps on adding context data such as start time, end time, and metadata about each operation (span). 
+- Trace data gets stored and then is visualized.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/media/img/distributed-tracing.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 03 Dec 2023 15:20:00 +0530</pubDate>
+        <link>/blog/tutorial/Distributed-Tracing</link>
+        <guid isPermaLink="true">/blog/tutorial/Distributed-Tracing</guid>
+        
+        <category>Basics</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
     
       <item>
         <title>Elasticsearch Cluster Overview</title>
@@ -713,87 +757,6 @@ Credentials → System → Global Credentials → Add Credentials
         <category>key</category>
         
         <category>Cryptography</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>Transactional System Administration Vs Service Centric Model in SRE</title>
-        <description>&lt;h3 id=&quot;what-is-transactional-system-administration&quot;&gt;What is Transactional System Administration?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;Think of it as a scenario between Customer and SysAdmin:
-- Customer : Would you do xyz task?
-- SysAdmin : Yes, Done!
-- Customer verifies. 
-This is a typical transaction system. The best example is ticket system.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;why-is-it-bad&quot;&gt;Why is it Bad?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;- It is a reactive process as the SysAdmin has to do job in a limited time frame which creates pressure over them.
-- It discourages the long term planning, for eg. Nobody comes and says I am working on service and will need this machine configuration in future. As a result there are emergency hacks and outages. Operations is an afterthought.
-- No automation for optimization and prioritization of the requests.
-- Customer considers SRE as &quot;servant&quot; and SRE thinks customer as &quot;ever demanding child&quot;. Both of these is bad.
-- There is only one way to scale i.e. hire more people!
-- Users hate to open tickets for every task and hang on it.
-The whole ticket system is creating a pressured environment for SREs , lets call it as &quot;Push&quot; mechanism is working here.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;how-did-we-reach-here&quot;&gt;How did we reach here?&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;Have we really, ever gave a thought that do we really need Ticket System?  
-Actually No! It&apos;s not required.
-But then you need a way to track your work, right!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;some-of-the-ways-that-different-organizations-has-adopted&quot;&gt;Some of the ways that different organizations has adopted.&lt;/h3&gt;
-&lt;h4 id=&quot;1-baseline--convert-push---collaboration&quot;&gt;1) Baseline- Convert “Push” -&amp;gt; “Collaboration”&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;How? There are 2 ways: 
-- Put one SRE member in different development team&apos;s Agile meetings.
-- Put each team lead of different development team&apos;s in SRE Agile meetings.
-	&amp;gt; Another version could be SRE communicating with all stakeholders of the product not just developers.
-Both of the above points gives a single solution by solving Administartion related problems in Dev teams. Isn&apos;t it? 
-SRE memebers become aware of their problems in the meetings and can solve them.
-Dev teams can also use SRE chat rooms for their issues.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;2-baseline--convert-push---automations&quot;&gt;2) Baseline- Convert “Push” -&amp;gt; “Automations”&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;Some eg:
-- Automating compilation and build process in CI/CD for developers to do on their own. Click or give some APIs and it&apos;s done.
-- Auotmate load balance to point at service replicas.
-- Automate VM creation.
-- Laptop distribution: For new employees we should maintain laptop distribution system as-
-		&amp;gt; SRE tracks HR DB for new employee, Emails when eligible and creates a portal for ordering machines.
-		&amp;gt; Automates OS installation for use by laptop delivery crew.
-		&amp;gt; Does capacity planning generates purchase orders etc for purchasing  and finance group.
-Here we try to automate as much as possible for users to get the task done by automations instead of killing SRE&apos;s time. This also keeps motivation of SRE high.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;3-baseline--convert-push---pull&quot;&gt;3) Baseline- Convert “Push” -&amp;gt; “Pull”&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;Use Kanban boards, some good eg are:
-- Trello board
-- Learnkit.com
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div&gt;&lt;figure&gt;&lt;img src=&quot;/media/img/kanban-board.png&quot; /&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
-
-&lt;pre&gt;&lt;code&gt;- Assign 3 task per person in action per week. You pull 3 tasks through system per week.
-This way everyone could prioritize their tasks. It&apos;s upto the product management to decide in case of high loads whether prioritize the tasks or hire more people.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Some References:
-&lt;a href=&quot;https://www.usenix.org/conference/lisa15/conference-program/presentation/limoncelli&quot;&gt;
-Reference
-&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 Mar 2019 22:40:00 +0530</pubDate>
-        <link>/blog/tutorial/Transactional-System-Administration-Vs-Service-Centric-Model-in-SRE</link>
-        <guid isPermaLink="true">/blog/tutorial/Transactional-System-Administration-Vs-Service-Centric-Model-in-SRE</guid>
-        
-        <category>TransactionalAdministrationSystem</category>
-        
-        <category>+</category>
-        
-        <category>ServiceCentricModel</category>
         
         
         <category>Tutorial</category>
