@@ -5,8 +5,8 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Fri, 02 Feb 2024 19:26:29 +0530</pubDate>
-    <lastBuildDate>Fri, 02 Feb 2024 19:26:29 +0530</lastBuildDate>
+      <pubDate>Fri, 02 Feb 2024 19:59:18 +0530</pubDate>
+    <lastBuildDate>Fri, 02 Feb 2024 19:59:18 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -26,7 +26,7 @@
 - Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&quot;how-does-distributed-tracing-works&quot;&gt;How does distributed tracing works?&lt;/h3&gt;
+&lt;h3 id=&quot;how-does-distributed-tracing-work&quot;&gt;How does distributed tracing work?&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;- Trace-id gets attached to an incoming request to the system. This identifies the request during its lifespan within the system.
 - For every Child Span their is a Parent Span id associated.

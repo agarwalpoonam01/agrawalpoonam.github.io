@@ -19,7 +19,7 @@ author: Poonam Agarwal
 	- Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
 	- Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
 
-### How does distributed tracing works?
+### How does distributed tracing work?
 
 	- Trace-id gets attached to an incoming request to the system. This identifies the request during its lifespan within the system.
 	- For every Child Span their is a Parent Span id associated.
