@@ -7,15 +7,15 @@ category: Tutorial
 author: Poonam Agarwal
 ---
 ### Distributed tracing:
-	- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough enough to understand where the fault is.
-	- Distributed tracing enables visibility of how request flow into the system by collecting the information such as time taken at each step , errors, failures etc.
+	- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
+	- Distributed tracing enables visibility of how request flows into the system by collecting the information such as time taken at each step , errors, failures etc.
 
 ### Components of Distributed tracing:
 
 	- Trace: Request from source to destination having different service hops in between. Traces are made up of spans.
 	- Span: A Single operation within a service. A service can have multiple spans. Primary building block of a trace. 
 	- Context: Passing context between different components or service in a distributed system.
-	- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage tracing data.
+	- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage trace data.
 	- Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
 	- Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
 

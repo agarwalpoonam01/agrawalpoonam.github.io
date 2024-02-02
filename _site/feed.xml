@@ -5,15 +5,15 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Fri, 02 Feb 2024 19:59:18 +0530</pubDate>
-    <lastBuildDate>Fri, 02 Feb 2024 19:59:18 +0530</lastBuildDate>
+      <pubDate>Fri, 02 Feb 2024 20:03:02 +0530</pubDate>
+    <lastBuildDate>Fri, 02 Feb 2024 20:03:02 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>Distributed Tracing</title>
         <description>&lt;h3 id=&quot;distributed-tracing&quot;&gt;Distributed tracing:&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough enough to understand where the fault is.
-- Distributed tracing enables visibility of how request flow into the system by collecting the information such as time taken at each step , errors, failures etc.
+&lt;pre&gt;&lt;code&gt;- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
+- Distributed tracing enables visibility of how request flows into the system by collecting the information such as time taken at each step , errors, failures etc.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;components-of-distributed-tracing&quot;&gt;Components of Distributed tracing:&lt;/h3&gt;
@@ -21,7 +21,7 @@
 &lt;pre&gt;&lt;code&gt;- Trace: Request from source to destination having different service hops in between. Traces are made up of spans.
 - Span: A Single operation within a service. A service can have multiple spans. Primary building block of a trace. 
 - Context: Passing context between different components or service in a distributed system.
-- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage tracing data.
+- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage trace data.
 - Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
 - Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
 &lt;/code&gt;&lt;/pre&gt;
