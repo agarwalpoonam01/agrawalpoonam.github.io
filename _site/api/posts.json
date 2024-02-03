@@ -6,16 +6,27 @@
         "category": "Tutorial",
         "url": "/blog/tutorial/Distributed-Tracing",
         "tags": ["Basics"],
-        "date": "2023-12-03 15:20:00 +0530",
+        "date": "2023-12-30 15:20:00 +0530",
         "language": "en"
     },
   
 
   
     {
-        "title": "Elasticsearch Cluster Overview",
+        "title": "Elasticsearch Components",
         "category": "Tutorial",
-        "url": "/blog/tutorial/Elasticsearch-Cluster-Overview",
+        "url": "/blog/tutorial/Elasticsearch-Components",
+        "tags": ["Basics"],
+        "date": "2023-12-15 04:00:00 +0530",
+        "language": "en"
+    },
+  
+
+  
+    {
+        "title": "Elasticsearch Architecture",
+        "category": "Tutorial",
+        "url": "/blog/tutorial/Elasticsearch-Architecture",
         "tags": ["Basics"],
         "date": "2023-12-03 15:20:00 +0530",
         "language": "en"

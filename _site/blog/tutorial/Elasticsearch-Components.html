@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Distributed Tracing</title>
-    <meta name="description" content="Distributed tracing:- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across mult...">
+    <title>Elasticsearch Components</title>
+    <meta name="description" content="What are the components of ELK Stack?">
   
     
     <meta name="keywords" content="Basics" />
@@ -18,7 +18,7 @@
 	
     <!-- Open Graph data -->
 
-	<meta property="og:title" content="Distributed Tracing" />
+	<meta property="og:title" content="Elasticsearch Components" />
 	<meta property="og:type" content="article" />
 
 
@@ -28,10 +28,10 @@
 
 
 <meta property="og:site_name" content="Life  is  Short  Do  More" />
-<meta property="og:description" content="Distributed tracing:- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across mult..." />
+<meta property="og:description" content="What are the components of ELK Stack?" />
 
 
-<meta property="og:url" content="/blog/tutorial/Distributed-Tracing" />
+<meta property="og:url" content="/blog/tutorial/Elasticsearch-Components" />
 
 
     
@@ -40,7 +40,7 @@
 
 
 
-<meta property="article:published_time" content="2023-12-30T15:20:00+05:30" />
+<meta property="article:published_time" content="2023-12-15T04:00:00+05:30" />
 
 
 
@@ -57,15 +57,15 @@
 
 
 
-<meta name="twitter:title" content="Distributed Tracing">
+<meta name="twitter:title" content="Elasticsearch Components">
 
 
 
 
-<meta name="twitter:url" content="/blog/tutorial/Distributed-Tracing">
+<meta name="twitter:url" content="/blog/tutorial/Elasticsearch-Components">
 
 
-<meta name="twitter:description" content="Distributed tracing:- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across mult...">
+<meta name="twitter:description" content="What are the components of ELK Stack?">
 
 <meta name="twitter:image:src" content="/assets/mountain-cover.jpg">
 <!-- End: Twitter data -->	
@@ -156,9 +156,9 @@
     <article class="post single-post" itemscope itemtype="https://schema.org/BlogPosting">
 
         <header class="post-header short-diver">
-            <h1 class="post-title" itemprop="name headline">Distributed Tracing</h1>
+            <h1 class="post-title" itemprop="name headline">Elasticsearch Components</h1>
             <section class="post-meta">
-                <time datetime="2023-12-30T15:20:00+05:30" itemprop="datePublished">Dec 30, 2023</time>
+                <time datetime="2023-12-15T04:00:00+05:30" itemprop="datePublished">Dec 15, 2023</time>
                 on
                 
                 <span>Basics</span>
@@ -167,32 +167,30 @@
         </header>
 
         <section class="post-content short-diver" itemprop="articleBody">
-            <h3 id="distributed-tracing">Distributed tracing:</h3>
-<pre><code>- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across multiple servers in different location, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
-- Distributed tracing enables visibility of how request flows into the system by collecting the information such as time taken at each step , errors, failures etc.
-</code></pre>
+            <h3 id="what-are-the-components-of-elk-stack">What are the components of ELK Stack?</h3>
 
-<h3 id="components-of-distributed-tracing">Components of Distributed tracing:</h3>
+<pre><code>- E=? Elasticsearch. 
+- It is distributed store, search and analytics engine based on Apache lucene. Elasticsearch is where indexing, search and analytics happens. 
 
-<pre><code>- Trace: Request from source to destination having different service hops in between. Traces are made up of spans.
-- Span: A Single operation within a service. A service can have multiple spans. Primary building block of a trace. 
-- Context: Passing context between different components or service in a distributed system.
-- Instrumentation: Instrumentation library is component that developers integrate into their applications to generate, collect and manage trace data.
-- Data Store: Typically storage system that stores trace data. Eg. Elasticsearch, Cassandra, Jaeger
-- Visualization: Graphical representation of the trace data. Eg. Kibana, Jaeger UI
-</code></pre>
+- L=? Logstash.
+- Collects, aggregates, enrich and ships data to elasticsearch.
 
-<h3 id="how-does-distributed-tracing-work">How does distributed tracing work?</h3>
+- K=? Kibana.
+- With Kibana one can explore, visualize the data in elasticsearch.
 
-<pre><code>- Trace-id gets attached to an incoming request to the system. This identifies the request during its lifespan within the system.
-- For every Child Span their is a Parent Span id associated.
-- While the request flows in the system instrumentation library keeps on adding context data such as start time, end time, and metadata about each operation (span). 
-- Trace data gets stored and then is visualized.
+- There are few more components that can send data to elasticsearch - Beats, APM, external services.
+
+- There are different kind of beats shipper, for eg. filebeat, metricbeat, packetbeat, winlogbeat etc.
+- Beats=? For eg. Filebeat can collect data from files in distributed serevrs and send data to the logstash or directly to elasticsearch.
+
+- APM=? Application Performane Monitoring. Capture and analyze distributed transactions in distributed system and sends the captured trace data to elasticsearch.
+
+- External services=? can send data directly to elasticsearch using elasticsearch api end points.
 </code></pre>
 
 <div>
 <figure>
-<img src="/media/img/distributed-tracing.png" />
+<img src="/media/img/elasticsearch-components.png" />
 </figure>
 
 </div>

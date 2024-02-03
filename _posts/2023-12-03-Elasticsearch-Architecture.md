@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Elasticsearch Cluster Overview"
+title: "Elasticsearch Architecture"
 date: 	2023-12-03 12:50:00 +0300
 tags: Basics 
 category: Tutorial
 author: Poonam Agarwal
 ---
-### Elasticsearch Cluster Overview
+### Elasticsearch Architecture
 
 	- An elasticsearch cluster is made up of number of nodes.
 	- Each node is nothing but an instance of elasticsearch.
@@ -18,7 +18,7 @@ author: Poonam Agarwal
 
 <div>
 <figure>
-<img src="{{ site.github.url }}/media/img/elasticsearch-cluster-overview.png" />
+<img src="{{ site.github.url }}/media/img/elasticsearch-architecture.png" />
 </figure>
 
 </div>

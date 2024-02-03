@@ -5,8 +5,8 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Sat, 03 Feb 2024 10:16:42 +0530</pubDate>
-    <lastBuildDate>Sat, 03 Feb 2024 10:16:42 +0530</lastBuildDate>
+      <pubDate>Sat, 03 Feb 2024 11:07:18 +0530</pubDate>
+    <lastBuildDate>Sat, 03 Feb 2024 11:07:18 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -42,7 +42,7 @@
 &lt;/div&gt;
 
 </description>
-        <pubDate>Sun, 03 Dec 2023 15:20:00 +0530</pubDate>
+        <pubDate>Sat, 30 Dec 2023 15:20:00 +0530</pubDate>
         <link>/blog/tutorial/Distributed-Tracing</link>
         <guid isPermaLink="true">/blog/tutorial/Distributed-Tracing</guid>
         
@@ -54,8 +54,50 @@
       </item>
     
       <item>
-        <title>Elasticsearch Cluster Overview</title>
-        <description>&lt;h3 id=&quot;elasticsearch-cluster-overview&quot;&gt;Elasticsearch Cluster Overview&lt;/h3&gt;
+        <title>Elasticsearch Components</title>
+        <description>&lt;h3 id=&quot;what-are-the-components-of-elk-stack&quot;&gt;What are the components of ELK Stack?&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;- E=? Elasticsearch. 
+- It is distributed store, search and analytics engine based on Apache lucene. Elasticsearch is where indexing, search and analytics happens. 
+
+- L=? Logstash.
+- Collects, aggregates, enrich and ships data to elasticsearch.
+
+- K=? Kibana.
+- With Kibana one can explore, visualize the data in elasticsearch.
+
+- There are few more components that can send data to elasticsearch - Beats, APM, external services.
+
+- There are different kind of beats shipper, for eg. filebeat, metricbeat, packetbeat, winlogbeat etc.
+- Beats=? For eg. Filebeat can collect data from files in distributed serevrs and send data to the logstash or directly to elasticsearch.
+
+- APM=? Application Performane Monitoring. Capture and analyze distributed transactions in distributed system and sends the captured trace data to elasticsearch.
+
+- External services=? can send data directly to elasticsearch using elasticsearch api end points.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/media/img/elasticsearch-components.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 15 Dec 2023 04:00:00 +0530</pubDate>
+        <link>/blog/tutorial/Elasticsearch-Components</link>
+        <guid isPermaLink="true">/blog/tutorial/Elasticsearch-Components</guid>
+        
+        <category>Basics</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Elasticsearch Architecture</title>
+        <description>&lt;h3 id=&quot;elasticsearch-architecture&quot;&gt;Elasticsearch Architecture&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;- An elasticsearch cluster is made up of number of nodes.
 - Each node is nothing but an instance of elasticsearch.
@@ -68,15 +110,15 @@
 
 &lt;div&gt;
 &lt;figure&gt;
-&lt;img src=&quot;/media/img/elasticsearch-cluster-overview.png&quot; /&gt;
+&lt;img src=&quot;/media/img/elasticsearch-architecture.png&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;/div&gt;
 
 </description>
         <pubDate>Sun, 03 Dec 2023 15:20:00 +0530</pubDate>
-        <link>/blog/tutorial/Elasticsearch-Cluster-Overview</link>
-        <guid isPermaLink="true">/blog/tutorial/Elasticsearch-Cluster-Overview</guid>
+        <link>/blog/tutorial/Elasticsearch-Architecture</link>
+        <guid isPermaLink="true">/blog/tutorial/Elasticsearch-Architecture</guid>
         
         <category>Basics</category>
         
@@ -695,68 +737,6 @@ Credentials → System → Global Credentials → Add Credentials
         <category>,</category>
         
         <category>Kubernetes</category>
-        
-        
-        <category>Tutorial</category>
-        
-      </item>
-    
-      <item>
-        <title>RSA algorithm (asymmetric algorithm)</title>
-        <description>&lt;h3 id=&quot;what-is-rsa-algorithm&quot;&gt;What is RSA algorithm?&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;RSA(Rivest–Shamir–Adleman) is an algorithm to encrypt and decrypt messages. It is an asymmetric cryptographic algorithm. There is a pair of public, private key and algorithm, the message is encrypted with the shared public key of receiver and decrypted by the private key of the receiver.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example:&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;-   EncryptionKey =&amp;gt; (5,14)
-    Suppose a text to be encrypted is letter &apos;B&apos; -&amp;gt;  2, then  2^5(mod 14)
-    = 32(mod 14) = 4 (cyphertext). Where (e,N) that is 2^e(mod N) =&amp;gt; (5,14)
-    is encryption key
-
-
-    DecriptionKey: (11, 14),
-    4^11(mod 14) =&amp;gt; 2 == B, where (d,N) that is 4^d(mod N) =&amp;gt; (11, 14) is
-    decription key
-
--   How does it work, what is the algoritm? There is no magic it is just
-    simple mathematics:
-    Take two prime numbers (numbers can be hundreds &amp;amp; hundreds digit long),
-    I choose small number (for better explanation) (2,7) where p = 2, q = 7
-    -   N = p * q =&amp;gt; N = 14
-
-    -   choose φ(N) = (p-1)(q-1)
-
-    -   Now choose a number for encryption e where
-        { 1 &amp;lt; e &amp;lt; φ(N) and coprime with N and φ(N)}
-        1 &amp;lt; e &amp;lt; 6 =  2, 3, 4, 5
-        number which is coprime with 14 and 6 is 5
-        so our lock is (e,N) = (5,14)
-
-    -   Now for decryption we choose d such that {d.e(mod φ(N))}
-        that is -&amp;gt; d.5(mod 6) = 1
-        the options could be -&amp;gt; 1.5(mod 6), 2.5(mod 6), 3.5(mod 6),
-        4.5(mod 6),5.5(mod 6), 6.5(mod 6), 7.5(mod 6), 8.5(mod 6),
-        9.5(mod 6), 10.5(mod 6), 11.5(mod 6), 12.5(mod 6) and so on ...
-
-        I choose d = 11 that is 11.5(mod 6) which gives me the value 1.
-        So the key is (11, 14)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-        <pubDate>Sat, 25 Apr 2020 22:40:00 +0530</pubDate>
-        <link>/blog/tutorial/RSA_easyway</link>
-        <guid isPermaLink="true">/blog/tutorial/RSA_easyway</guid>
-        
-        <category>Asymmetric</category>
-        
-        <category>algorithm,</category>
-        
-        <category>Public</category>
-        
-        <category>key</category>
-        
-        <category>Cryptography</category>
         
         
         <category>Tutorial</category>
