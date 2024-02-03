@@ -7,7 +7,7 @@ category: Tutorial
 author: Poonam Agarwal
 ---
 ### Distributed tracing:
-	- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
+	- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across multiple servers in different location, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
 	- Distributed tracing enables visibility of how request flows into the system by collecting the information such as time taken at each step , errors, failures etc.
 
 ### Components of Distributed tracing:

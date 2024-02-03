@@ -5,14 +5,14 @@
     <description>This is the jekyllTheme example blog. It only exists to demonstrate how the theme looks and feels.</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-      <pubDate>Fri, 02 Feb 2024 20:03:02 +0530</pubDate>
-    <lastBuildDate>Fri, 02 Feb 2024 20:03:02 +0530</lastBuildDate>
+      <pubDate>Sat, 03 Feb 2024 10:16:42 +0530</pubDate>
+    <lastBuildDate>Sat, 03 Feb 2024 10:16:42 +0530</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
         <title>Distributed Tracing</title>
         <description>&lt;h3 id=&quot;distributed-tracing&quot;&gt;Distributed tracing:&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;- With distributed microservice system, it is hard to locate where the issue is, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
+&lt;pre&gt;&lt;code&gt;- It is hard to locate the issue when something goes wrong in distributed microservice system as the services are distributed across multiple servers in different location, so traditional monitoring method like logs and metrics are no longer enough to understand where the fault is.
 - Distributed tracing enables visibility of how request flows into the system by collecting the information such as time taken at each step , errors, failures etc.
 &lt;/code&gt;&lt;/pre&gt;
 
