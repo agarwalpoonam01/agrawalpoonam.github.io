@@ -11,7 +11,7 @@ excerpt:   This page contains the short profile of the author.
 
 ## Profile
 
-I'm a passionate DevOps Engineer with a decade of experience in container technologies, configuration management, infrastructure provisioning, and observability. I've had the joy of coaching hundreds of students, and helping them navigate the exciting world of DevOps. Let's build, automate, and innovate together!
+I'm an avid DevOps Engineer with a decade of experience in container technologies, configuration management, infrastructure provisioning, and observability. I've had the joy of coaching hundreds of students, and helping them navigate the exciting world of DevOps. Let's build, automate, and innovate together!
 
 ---
 
