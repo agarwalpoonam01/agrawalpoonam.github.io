@@ -36,7 +36,7 @@ I'm an avid DevOps Engineer with a decade of experience in container technologie
 ## Education
 
 2011-2012
-: Masters Of Engineering. IET DAVV, Indore, India.
+: Masters Of Engineering, IET DAVV India.
 
 
 
