@@ -11,20 +11,26 @@ excerpt:   This page contains the short profile of the author.
 
 ## Profile
 
-Learning comes with pace and in the process we come across with inner self taking care of every one we meet on the road and return back from where we started...
+I'm a passionate DevOps Engineer with a decade of experience in container technologies, configuration management, infrastructure provisioning, and observability. I've had the joy of coaching hundreds of students, and helping them navigate the exciting world of DevOps. Let's build, automate, and innovate together!
 
 ---
 
 ## Skills
 
-- Docker & Kubernetes Cluster to make MicroServices Highly Available and Distributed Systems Easily Scalable.  
-- Expertise in Jenkins CI/CD pipelines and Version Control Systems.
-- Python, Bash
-- Configuration Management
+- Python, Bash, Golang
+- AWS
+- Docker
+- Kubernetes
+- Terraform
+- Ansible
+- Jenkins CI/CD pipelines
+- ELK, Prometheus, Grafana
+- MySql
+- GitOps
+- Kubeflow
+- AIOps
 - REST Framework
-- JavaScript, Html, CSS
-- SQl/NoSql Databases
-
+  
 ---
 
 ## Education
@@ -33,13 +39,4 @@ Learning comes with pace and in the process we come across with inner self takin
 : Masters Of Engineering. IET DAVV, Indore, India.
 
 
-<dl>
-  <a href="{{ site.github.url }}/_pages/resume.html">Resume</a>
-</dl>
-
-<!-- <div>
-	<a href="{{ site.github.url }}/_pages/resume.html">Resume</a>
-	
-</div>
--->
 
